@@ -10,7 +10,8 @@ namespace Prototype.Controllers
 {
     class SortingAlgorithmController
     {
-        public void Sort(PrototypeUI parentForm)
+        
+        public async void Sort(PrototypeUI parentForm)
         {
             // create initial data set
             List<int> initialDataSet = CreateDataSet(9);
@@ -48,9 +49,9 @@ namespace Prototype.Controllers
                 }
 
                 // update the UI
-                parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData);
-
-
+                await parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData);
+                
+                
                 // check if both algorithms are fully sorted
                 finished = firstAlgorithm.Sorted() && secondAlgorithm.Sorted();
             }

@@ -24,6 +24,8 @@ namespace Prototype.Models
             data.Add(temp);
 
             counter++;
+            
+
 
             return data;
         }
@@ -31,7 +33,7 @@ namespace Prototype.Models
         public override bool Sorted()
         {
 
-            if (counter >= 100)
+            if (counter >= 10000)
             {
                 return true;
             }
