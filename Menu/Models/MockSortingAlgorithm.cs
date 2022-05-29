@@ -23,8 +23,7 @@ namespace Prototype.Models
             data.RemoveAt(0);
             data.Add(temp);
 
-            counter++;
-            
+            counter++;          
 
 
             return data;
