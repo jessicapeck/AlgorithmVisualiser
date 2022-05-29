@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Menu
+namespace Prototype
 {
     public partial class SortingComparison : Form
     {

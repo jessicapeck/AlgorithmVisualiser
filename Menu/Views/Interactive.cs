@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Menu
+namespace Prototype
 {
-    public partial class ShortestPathAlgorithms : Form
+    public partial class Interactive : Form
     {
-        public ShortestPathAlgorithms()
+        public Interactive()
         {
             InitializeComponent();
         }

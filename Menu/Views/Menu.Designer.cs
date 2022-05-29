@@ -1,5 +1,5 @@
 ﻿
-namespace Menu
+namespace Prototype
 {
     partial class Menu
     {
@@ -37,8 +37,8 @@ namespace Menu
             this.need_help_button = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,10 +49,9 @@ namespace Menu
             this.welcome_label.BackColor = System.Drawing.Color.Transparent;
             this.welcome_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.welcome_label.ForeColor = System.Drawing.Color.RoyalBlue;
-            this.welcome_label.Location = new System.Drawing.Point(24, 53);
-            this.welcome_label.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.welcome_label.Location = new System.Drawing.Point(36, 82);
             this.welcome_label.Name = "welcome_label";
-            this.welcome_label.Size = new System.Drawing.Size(538, 36);
+            this.welcome_label.Size = new System.Drawing.Size(773, 52);
             this.welcome_label.TabIndex = 0;
             this.welcome_label.Text = "Welcome to the Algorithm Visualiser!";
             this.welcome_label.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -62,9 +61,10 @@ namespace Menu
             this.sorting_algorithm_animations_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sorting_algorithm_animations_button.AutoSize = true;
             this.sorting_algorithm_animations_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sorting_algorithm_animations_button.Location = new System.Drawing.Point(170, 153);
+            this.sorting_algorithm_animations_button.Location = new System.Drawing.Point(255, 235);
+            this.sorting_algorithm_animations_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.sorting_algorithm_animations_button.Name = "sorting_algorithm_animations_button";
-            this.sorting_algorithm_animations_button.Size = new System.Drawing.Size(235, 66);
+            this.sorting_algorithm_animations_button.Size = new System.Drawing.Size(352, 102);
             this.sorting_algorithm_animations_button.TabIndex = 1;
             this.sorting_algorithm_animations_button.Text = "Sorting Algorithm Animations";
             this.sorting_algorithm_animations_button.UseVisualStyleBackColor = true;
@@ -74,9 +74,10 @@ namespace Menu
             // 
             this.shortest_path_algorithms_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shortest_path_algorithms_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shortest_path_algorithms_button.Location = new System.Drawing.Point(170, 225);
+            this.shortest_path_algorithms_button.Location = new System.Drawing.Point(255, 346);
+            this.shortest_path_algorithms_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.shortest_path_algorithms_button.Name = "shortest_path_algorithms_button";
-            this.shortest_path_algorithms_button.Size = new System.Drawing.Size(235, 66);
+            this.shortest_path_algorithms_button.Size = new System.Drawing.Size(352, 102);
             this.shortest_path_algorithms_button.TabIndex = 2;
             this.shortest_path_algorithms_button.Text = "Shortest Path Algorithms";
             this.shortest_path_algorithms_button.UseVisualStyleBackColor = true;
@@ -86,9 +87,10 @@ namespace Menu
             // 
             this.algorithm_information_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.algorithm_information_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.algorithm_information_button.Location = new System.Drawing.Point(170, 369);
+            this.algorithm_information_button.Location = new System.Drawing.Point(255, 568);
+            this.algorithm_information_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.algorithm_information_button.Name = "algorithm_information_button";
-            this.algorithm_information_button.Size = new System.Drawing.Size(235, 66);
+            this.algorithm_information_button.Size = new System.Drawing.Size(352, 102);
             this.algorithm_information_button.TabIndex = 3;
             this.algorithm_information_button.Text = "Algorithm Information";
             this.algorithm_information_button.UseVisualStyleBackColor = true;
@@ -98,9 +100,10 @@ namespace Menu
             // 
             this.interactive_algorithms_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.interactive_algorithms_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interactive_algorithms_button.Location = new System.Drawing.Point(170, 297);
+            this.interactive_algorithms_button.Location = new System.Drawing.Point(255, 457);
+            this.interactive_algorithms_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.interactive_algorithms_button.Name = "interactive_algorithms_button";
-            this.interactive_algorithms_button.Size = new System.Drawing.Size(235, 66);
+            this.interactive_algorithms_button.Size = new System.Drawing.Size(352, 102);
             this.interactive_algorithms_button.TabIndex = 4;
             this.interactive_algorithms_button.Text = "Interactive Algorithms";
             this.interactive_algorithms_button.UseVisualStyleBackColor = true;
@@ -109,9 +112,10 @@ namespace Menu
             // need_help_button
             // 
             this.need_help_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.need_help_button.Location = new System.Drawing.Point(484, 526);
+            this.need_help_button.Location = new System.Drawing.Point(726, 809);
+            this.need_help_button.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.need_help_button.Name = "need_help_button";
-            this.need_help_button.Size = new System.Drawing.Size(88, 23);
+            this.need_help_button.Size = new System.Drawing.Size(132, 35);
             this.need_help_button.TabIndex = 5;
             this.need_help_button.Text = "Need help?";
             this.need_help_button.UseVisualStyleBackColor = true;
@@ -119,12 +123,14 @@ namespace Menu
             // 
             // menuStrip1
             // 
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(876, 35);
             this.menuStrip1.TabIndex = 7;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -133,30 +139,30 @@ namespace Menu
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(54, 29);
             this.fileToolStripMenuItem.Text = "File";
-            // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(141, 34);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(65, 29);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
             // Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(584, 561);
+            this.ClientSize = new System.Drawing.Size(876, 863);
             this.Controls.Add(this.need_help_button);
             this.Controls.Add(this.interactive_algorithms_button);
             this.Controls.Add(this.algorithm_information_button);
@@ -165,11 +171,11 @@ namespace Menu
             this.Controls.Add(this.welcome_label);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(598, 501);
+            this.MinimumSize = new System.Drawing.Size(886, 741);
             this.Name = "Menu";
             this.Text = "Algorithm Visualiser";
+            this.Load += new System.EventHandler(this.Menu_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

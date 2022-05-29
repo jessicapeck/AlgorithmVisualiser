@@ -1,7 +1,7 @@
 ﻿
-namespace Menu
+namespace Prototype
 {
-    partial class AlgorithmInformation
+    partial class Interactive
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Menu
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "AlgorithmInformation";
+            this.Text = "Interactive";
         }
 
         #endregion

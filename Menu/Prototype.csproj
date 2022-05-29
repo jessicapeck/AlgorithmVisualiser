@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{35D9B5E0-DE72-4D29-9FDB-2D4FCA66F0FA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Menu</RootNamespace>
-    <AssemblyName>Menu</AssemblyName>
+    <RootNamespace>Prototype</RootNamespace>
+    <AssemblyName>Prototype</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,39 +46,48 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AlgorithmInformation.cs">
+    <Compile Include="Controllers\SortingAlgorithmController.cs" />
+    <Compile Include="Models\MockSortingAlgorithm.cs" />
+    <Compile Include="Models\SortingAlgorithm.cs" />
+    <Compile Include="Views\AlgorithmInformation.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AlgorithmInformation.Designer.cs">
+    <Compile Include="Views\AlgorithmInformation.Designer.cs">
       <DependentUpon>AlgorithmInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interactive.cs">
+    <Compile Include="Views\Interactive.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interactive.Designer.cs">
+    <Compile Include="Views\Interactive.Designer.cs">
       <DependentUpon>Interactive.cs</DependentUpon>
     </Compile>
-    <Compile Include="Menu.cs">
+    <Compile Include="Views\Menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Menu.Designer.cs">
+    <Compile Include="Views\Menu.Designer.cs">
       <DependentUpon>Menu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ShortestPathAlgorithms.cs">
+    <Compile Include="Views\PrototypeUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ShortestPathAlgorithms.Designer.cs">
+    <Compile Include="Views\PrototypeUI.Designer.cs">
+      <DependentUpon>PrototypeUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ShortestPathAlgorithms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\ShortestPathAlgorithms.Designer.cs">
       <DependentUpon>ShortestPathAlgorithms.cs</DependentUpon>
     </Compile>
-    <Compile Include="SortingComparison.cs">
+    <Compile Include="Views\SortingComparison.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SortingComparison.Designer.cs">
+    <Compile Include="Views\SortingComparison.Designer.cs">
       <DependentUpon>SortingComparison.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Menu.resx">
+    <EmbeddedResource Include="Views\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -89,8 +98,12 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="SortingComparison.resx">
+    <EmbeddedResource Include="Views\PrototypeUI.resx">
+      <DependentUpon>PrototypeUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SortingComparison.resx">
       <DependentUpon>SortingComparison.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
@@ -106,5 +119,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Menu
+namespace Prototype
 {
     public partial class Menu : Form
     {
@@ -41,12 +41,7 @@ namespace Menu
 
         private void sorting_algorithm_animations_button_Click(object sender, EventArgs e)
         {
-            //Form SortingComparison = new Form();
-            //this.Hide();
-            //SortingComparison.Show();
-
             var cheese = new SortingComparison();
-            this.Hide();
             cheese.Show();
         }
 
@@ -73,6 +68,11 @@ namespace Menu
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
