@@ -8,7 +8,19 @@ namespace Prototype.Models
 {
     abstract class SortingAlgorithm
     {
-        public abstract void InitialiseDataSet(List<int> initialData);
+        protected List<int> data;
+
+        public List<int> DataSet
+        {
+            get
+            {
+                return data;
+            }
+            set
+            {
+                data = value;
+            }
+        }
 
         public abstract List<int> PerformStep();
 

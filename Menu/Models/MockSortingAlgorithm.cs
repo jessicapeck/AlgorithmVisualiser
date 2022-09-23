@@ -8,13 +8,10 @@ namespace Prototype.Models
 {
     class MockSortingAlgorithm : SortingAlgorithm
     {
-        private List<int> data;
+        
         private int counter = 0;
 
-        public override void InitialiseDataSet(List<int> initialData)
-        {
-            data = new List<int>(initialData);            
-        }
+        
 
         public override List<int> PerformStep()
         {
@@ -23,7 +20,10 @@ namespace Prototype.Models
             data.RemoveAt(0);
             data.Add(temp);
 
-            counter++;          
+            counter++;
+
+            // test : write contents of data set to console
+            Console.WriteLine("MOCK SORT: " + string.Join(", ", data));
 
 
             return data;

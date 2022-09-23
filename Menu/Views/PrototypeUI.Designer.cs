@@ -54,7 +54,7 @@ namespace Prototype.Views
             this.first_algorithm_picture_box.Size = new System.Drawing.Size(427, 581);
             this.first_algorithm_picture_box.TabIndex = 1;
             this.first_algorithm_picture_box.TabStop = false;
-            this.first_algorithm_picture_box.Paint += new System.Windows.Forms.PaintEventHandler(this.firstAlgorithmPictureBox_Paint);
+            this.first_algorithm_picture_box.Paint += new System.Windows.Forms.PaintEventHandler(this.first_algorithm_picture_box_Paint);
             // 
             // go_button
             // 

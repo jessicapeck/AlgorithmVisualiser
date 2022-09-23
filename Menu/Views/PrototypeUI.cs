@@ -44,8 +44,8 @@ namespace Prototype.Views
 
             // wait time
             await Task.Delay(this.speed_track_bar.Value);
-
-            Console.WriteLine(stepNumber);
+            
+            //Console.WriteLine(stepNumber);
         }
 
         private void drawBars(Graphics g, List<int> barHeights)
@@ -72,12 +72,13 @@ namespace Prototype.Views
             }            
         }
 
-        private void firstAlgorithmPictureBox_Paint(object sender, PaintEventArgs e)
+        private void first_algorithm_picture_box_Paint(object sender, PaintEventArgs e)
         {
             if (firstAlgorithmBarHeights != null)
             {
                 drawBars(e.Graphics, firstAlgorithmBarHeights);
             }
+
         }
 
         private void second_algorithm_picture_box_Paint(object sender, PaintEventArgs e)
@@ -87,5 +88,7 @@ namespace Prototype.Views
                 drawBars(e.Graphics, secondAlgorithmBarHeights);
             }
         }
+
+        
     }
 }
