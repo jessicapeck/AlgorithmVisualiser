@@ -40,18 +40,18 @@ namespace Prototype.Views
             // 
             // second_algorithm_picture_box
             // 
-            this.second_algorithm_picture_box.Location = new System.Drawing.Point(465, 12);
+            this.second_algorithm_picture_box.Location = new System.Drawing.Point(531, 105);
             this.second_algorithm_picture_box.Name = "second_algorithm_picture_box";
-            this.second_algorithm_picture_box.Size = new System.Drawing.Size(427, 581);
+            this.second_algorithm_picture_box.Size = new System.Drawing.Size(350, 400);
             this.second_algorithm_picture_box.TabIndex = 0;
             this.second_algorithm_picture_box.TabStop = false;
             this.second_algorithm_picture_box.Paint += new System.Windows.Forms.PaintEventHandler(this.second_algorithm_picture_box_Paint);
             // 
             // first_algorithm_picture_box
             // 
-            this.first_algorithm_picture_box.Location = new System.Drawing.Point(12, 12);
+            this.first_algorithm_picture_box.Location = new System.Drawing.Point(167, 105);
             this.first_algorithm_picture_box.Name = "first_algorithm_picture_box";
-            this.first_algorithm_picture_box.Size = new System.Drawing.Size(427, 581);
+            this.first_algorithm_picture_box.Size = new System.Drawing.Size(350, 400);
             this.first_algorithm_picture_box.TabIndex = 1;
             this.first_algorithm_picture_box.TabStop = false;
             this.first_algorithm_picture_box.Paint += new System.Windows.Forms.PaintEventHandler(this.first_algorithm_picture_box_Paint);

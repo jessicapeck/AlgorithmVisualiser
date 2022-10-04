@@ -17,8 +17,8 @@ namespace Prototype.Views
         private List<int> secondAlgorithmBarHeights;
 
         // declare a white pen and a black pen for drawing data bars
-        private Pen whitePen = new Pen(Color.White, 10);
-        private Pen blackPen = new Pen(Color.Black, 10);
+        private Pen whitePen = new Pen(Color.White);
+        private Pen blackPen = new Pen(Color.Black);
 
         public PrototypeUI()
         {
@@ -54,21 +54,26 @@ namespace Prototype.Views
             int maxHeight = barHeights.Max();
 
             // define the scaling of the lines
-            int scaling = 30;
+            int y_scaling = (first_algorithm_picture_box.Height - 10) / maxHeight;
+            int x_scaling = ((first_algorithm_picture_box.Width - 10 - (5 * barHeights.Count)) / barHeights.Count);
+
+            // set the width of the pens to the scaling in the x-direction
+            whitePen.Width = x_scaling;
+            blackPen.Width = x_scaling;
 
             // define starting x and y positions within the picture box
             int xPosition = 10;
-            int yPosition = 10 + (maxHeight * scaling);
+            int yPosition = 10 + first_algorithm_picture_box.Height;
 
             // iterate through each data element in the list
             // first draw a white line of max height to cover up previous line
-            // then draw a black line of the correct height
+            // then draw a black line of the correct heights
             foreach (int barHeight in barHeights)
             {
-                g.DrawLine(whitePen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (maxHeight * scaling)));
-                g.DrawLine(blackPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * scaling)));
+                g.DrawLine(whitePen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (maxHeight * y_scaling)));
+                g.DrawLine(blackPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * y_scaling)));
 
-                xPosition += 15;
+                xPosition += x_scaling + 5;
             }            
         }
 
