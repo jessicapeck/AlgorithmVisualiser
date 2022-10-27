@@ -90,6 +90,7 @@ namespace Prototype.Views
             this.button1.TabIndex = 4;
             this.button1.Text = "Sorting Algorithm Animations";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Visible = false;
             // 
             // button2
             // 
@@ -100,6 +101,7 @@ namespace Prototype.Views
             this.button2.TabIndex = 5;
             this.button2.Text = "Interactive";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // button3
             // 
@@ -110,6 +112,7 @@ namespace Prototype.Views
             this.button3.TabIndex = 6;
             this.button3.Text = "Facts and Information";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Visible = false;
             // 
             // button4
             // 
@@ -120,6 +123,7 @@ namespace Prototype.Views
             this.button4.TabIndex = 7;
             this.button4.Text = "Shortest Path Algorithm";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Visible = false;
             // 
             // PrototypeUI
             // 
