@@ -23,7 +23,7 @@ namespace Prototype.Models
             counter++;
 
             // test : write contents of data set to console
-            Console.WriteLine("MOCK SORT: " + string.Join(", ", data));
+            //Console.WriteLine("MOCK SORT: " + string.Join(", ", data));
 
 
             return data;

@@ -82,11 +82,11 @@
     <Compile Include="Views\ShortestPathAlgorithms.Designer.cs">
       <DependentUpon>ShortestPathAlgorithms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SortingComparison.cs">
+    <Compile Include="Views\SortingAlgorithmAnimationUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\SortingComparison.Designer.cs">
-      <DependentUpon>SortingComparison.cs</DependentUpon>
+    <Compile Include="Views\SortingAlgorithmAnimationUI.Designer.cs">
+      <DependentUpon>SortingAlgorithmAnimationUI.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -104,8 +104,8 @@
     <EmbeddedResource Include="Views\PrototypeUI.resx">
       <DependentUpon>PrototypeUI.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\SortingComparison.resx">
-      <DependentUpon>SortingComparison.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SortingAlgorithmAnimationUI.resx">
+      <DependentUpon>SortingAlgorithmAnimationUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

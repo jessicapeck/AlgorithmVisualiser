@@ -14,7 +14,7 @@ namespace Prototype.Controllers
         public async void Sort(PrototypeUI parentForm)
         {
             // create initial data set
-            List<int> firstInitialDataSet = CreateDataSet(9);
+            List<int> firstInitialDataSet = CreateDataSet(8);
             // create copy of first data set
             List<int> secondInitialDataSet = new List<int>(firstInitialDataSet);
 
@@ -63,7 +63,7 @@ namespace Prototype.Controllers
 
         private List<int> CreateDataSet(int numberOfElements)
         {
-            return new List<int> { 1, 5, 8, 2, 6, 3, 4, 9, 7 };
+            return new List<int> {7, 6, 5, 4, 8, 3, 2, 1};
         }
     }
 }
