@@ -15,9 +15,9 @@ namespace Prototype.Models
         // define variable for whether the data set is completely sorted
         private bool sorted = false;
 
-        int temp;
+        private int temp;
 
-        int passNum = 1;
+        private int passNum = 1;
 
         public override List<int> PerformStep()
         {
@@ -35,8 +35,8 @@ namespace Prototype.Models
             counter++;
 
             // test : write contents of data set to console
-            Console.WriteLine("BUBBLE SORT: " + string.Join(", ", data));
-            Console.WriteLine(passNum);
+            //Console.WriteLine("BUBBLE SORT: " + string.Join(", ", data));
+            //Console.WriteLine(passNum);
 
             // if end of pass and swaps have been made in the pass, reset the counter and variables
             if ((counter >= data.Count() - passNum) && (swapped == true))
@@ -59,7 +59,7 @@ namespace Prototype.Models
                 sorted = true;
             }            
 
-            // return data set
+            // return data set to controller
             return data;
         }
 

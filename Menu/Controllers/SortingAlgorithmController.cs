@@ -14,13 +14,13 @@ namespace Prototype.Controllers
         public async void Sort(PrototypeUI parentForm)
         {
             // create initial data set
-            List<int> firstInitialDataSet = CreateDataSet(5);
+            List<int> firstInitialDataSet = CreateDataSet(10);
             // create copy of first data set
             List<int> secondInitialDataSet = new List<int>(firstInitialDataSet);
 
             // create an instance of the sorting algorithm
             SortingAlgorithm firstAlgorithm = new BubbleSort();
-            SortingAlgorithm secondAlgorithm = new MockSortingAlgorithm();
+            SortingAlgorithm secondAlgorithm = new InsertionSort();
 
             // pass initial data set to sorting algorithms
             firstAlgorithm.DataSet = firstInitialDataSet;
@@ -63,7 +63,7 @@ namespace Prototype.Controllers
 
         private List<int> CreateDataSet(int numberOfElements)
         {
-            return new List<int> {5,4,3,2,1};
+            return new List<int> {10,6,8,4,9,5,7,2,3,1};
         }
     }
 }
