@@ -63,7 +63,7 @@ namespace Prototype.Views
 
             // define starting x and y positions within the picture box
             int xPosition = 10;
-            int yPosition = 10 + first_algorithm_picture_box.Height;
+            int yPosition = first_algorithm_picture_box.Height - 10;
 
             // iterate through each data element in the list
             // first draw a white line of max height to cover up previous line
