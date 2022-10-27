@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Controllers\SortingAlgorithmController.cs" />
     <Compile Include="Models\BubbleSort.cs" />
+    <Compile Include="Models\InsertionSort.cs" />
     <Compile Include="Models\MockSortingAlgorithm.cs" />
     <Compile Include="Models\SortingAlgorithm.cs" />
     <Compile Include="Views\AlgorithmInformation.cs">

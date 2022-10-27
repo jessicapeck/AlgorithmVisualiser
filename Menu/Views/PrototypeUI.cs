@@ -54,15 +54,15 @@ namespace Prototype.Views
             int maxHeight = barHeights.Max();
 
             // define the scaling of the lines
-            int y_scaling = (first_algorithm_picture_box.Height - 10) / maxHeight;
             int x_scaling = ((first_algorithm_picture_box.Width - 10 - (5 * barHeights.Count)) / barHeights.Count);
+            int y_scaling = (first_algorithm_picture_box.Height - 10) / maxHeight;
 
             // set the width of the pens to the scaling in the x-direction
             whitePen.Width = x_scaling;
             blackPen.Width = x_scaling;
 
             // define starting x and y positions within the picture box
-            int xPosition = 10;
+            int xPosition = 10 + (x_scaling / 2);
             int yPosition = first_algorithm_picture_box.Height - 10;
 
             // iterate through each data element in the list
@@ -74,7 +74,8 @@ namespace Prototype.Views
                 g.DrawLine(blackPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * y_scaling)));
 
                 xPosition += x_scaling + 5;
-            }            
+
+            }
         }
 
         private void first_algorithm_picture_box_Paint(object sender, PaintEventArgs e)

@@ -34,24 +34,30 @@ namespace Prototype.Models
             // increment counter by 1
             counter++;
 
+            // test : write contents of data set to console
+            Console.WriteLine("BUBBLE SORT: " + string.Join(", ", data));
+            Console.WriteLine(passNum);
+
             // if end of pass and swaps have been made in the pass, reset the counter and variables
-            if ((counter == data.Count() - passNum) && (swapped == true))
+            if ((counter >= data.Count() - passNum) && (swapped == true))
             {
                 counter = 0;
                 swapped = false;
                 sorted = false;
 
                 passNum++;
+
+                // check if the algorithm has reached the end of the final useful pass
+                if (passNum == data.Count())
+                {
+                    sorted = true;
+                }
             }
             // if end of pass and no swaps have been made in the pass, the data set is sorted
-            else if (((passNum == 8) ||(counter == data.Count() - passNum)) && (swapped == false))
+            else if (((counter >= data.Count() - passNum)) && (swapped == false))
             {
                 sorted = true;
-            }
-
-            // test : write contents of data set to console
-            //Console.WriteLine("BUBBLE SORT: " + string.Join(", ", data));
-            //Console.WriteLine(passNum);
+            }            
 
             // return data set
             return data;
