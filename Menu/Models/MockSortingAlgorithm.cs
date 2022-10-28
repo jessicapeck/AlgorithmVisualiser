@@ -29,17 +29,6 @@ namespace Prototype.Models
             return data;
         }
 
-        public override bool Sorted()
-        {
-
-            if (counter >= 10000)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
     }
 }

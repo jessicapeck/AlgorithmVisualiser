@@ -12,9 +12,7 @@ namespace Prototype.Models
         private int start_index = 1;
         private int counter = 1;
 
-        // define variable for whether the data set is completely sorted
-        private bool sorted = false;
-
+        
         // used in swap
         private int temp;
 
@@ -57,17 +55,6 @@ namespace Prototype.Models
             return data;
         }
 
-        public override bool Sorted()
-        {
-            // return true if the data set is sorted
-            if (sorted)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
     }
 }

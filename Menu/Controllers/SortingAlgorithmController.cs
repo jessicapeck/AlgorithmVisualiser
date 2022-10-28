@@ -26,7 +26,7 @@ namespace Prototype.Controllers
             firstAlgorithm.DataSet = firstInitialDataSet;
             secondAlgorithm.DataSet = secondInitialDataSet;
 
-            bool finished = firstAlgorithm.Sorted() && secondAlgorithm.Sorted();
+            bool finished = firstAlgorithm.Sorted && secondAlgorithm.Sorted;
 
             List<int> firstAlgorithmData = new List<int>();
             List<int> secondAlgorithmData = new List<int>();
@@ -40,13 +40,13 @@ namespace Prototype.Controllers
                 stepNumber++;
 
                 // tell each algorithm to perform one step and return the current state of the data if not already sorted
-                if (!firstAlgorithm.Sorted())
+                if (!firstAlgorithm.Sorted)
                 {
                     firstAlgorithm.PerformStep();
                     firstAlgorithmData = firstAlgorithm.DataSet;
                 }
 
-                if (!secondAlgorithm.Sorted())
+                if (!secondAlgorithm.Sorted)
                 {
                     secondAlgorithm.PerformStep();
                     secondAlgorithmData = secondAlgorithm.DataSet;
@@ -56,7 +56,7 @@ namespace Prototype.Controllers
                 await parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData);
                 
                 // check if both algorithms are fully sorted
-                finished = firstAlgorithm.Sorted() && secondAlgorithm.Sorted();
+                finished = firstAlgorithm.Sorted && secondAlgorithm.Sorted;
             }
 
         }

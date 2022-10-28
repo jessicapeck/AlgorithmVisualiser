@@ -12,8 +12,6 @@ namespace Prototype.Models
 
         // define variable for storing whether a swap has been made in a pass
         private bool swapped = false;
-        // define variable for whether the data set is completely sorted
-        private bool sorted = false;
 
         private int temp;
 
@@ -63,17 +61,6 @@ namespace Prototype.Models
             return data;
         }
 
-        public override bool Sorted()
-        {
-            // return true if the data set is sorted
-            if (sorted)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+        
     }
 }
