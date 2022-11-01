@@ -25,6 +25,12 @@ namespace Prototype.Views
         private string startingOrder;
         private string dataValues;
 
+        // sorting algorithm choices
+        private string firstSortingAlgorithm;
+        private string secondSortingAlgorithm;
+
+
+
         public SortingAlgorithmAnimationsUI()
         {
             InitializeComponent();
@@ -40,25 +46,13 @@ namespace Prototype.Views
             sorting_algorithms_button.ForeColor = Color.Black;
             sorting_algorithms_button.Enabled = false;
 
-        }
-
-
-
-        private void go_button_Click(object sender, EventArgs e)
-        {
-            SortingAlgorithmController controller = new SortingAlgorithmController();
-
-            // collect data from animation preferences
-
-            int numberOfElements = number_of_elements_trackBar.Value;
-
-            (string startingOrder, string dataValues) = CollectRadioButtonData();
-
-            controller.Sort(this, numberOfElements, startingOrder, dataValues);
+            // set default values for combo boxes to choose sorting algorithm
+            algorithm1_comboBox.SelectedIndex = 0;
+            algorithm2_comboBox.SelectedIndex = 0;
         }
 
         private (string, string) CollectRadioButtonData()
-        {            
+        {
             // get checked option from starting order list
             if (random_radioButton.Checked == true)
             {
@@ -85,6 +79,49 @@ namespace Prototype.Views
 
             return (startingOrder, dataValues);
         }
+
+        private (string, string) CollectSortingAlgorithmChoices()
+        {
+            // get sorting algorithm choices from combo boxes
+            firstSortingAlgorithm = algorithm1_comboBox.Text;
+            secondSortingAlgorithm = algorithm2_comboBox.Text;
+
+            return (firstSortingAlgorithm, secondSortingAlgorithm);
+
+        }
+
+        private void start_button_Click(object sender, EventArgs e)
+        {
+            SortingAlgorithmController controller = new SortingAlgorithmController();
+
+            // collect data from animation preferences
+
+            int numberOfElements = number_of_elements_trackBar.Value;
+
+            (string startingOrder, string dataValues) = CollectRadioButtonData();
+
+            (string firstSortingAlgorithm, string secondSortingAlgorithm) = CollectSortingAlgorithmChoices();
+
+            controller.Sort(this, numberOfElements, startingOrder, dataValues, firstSortingAlgorithm, secondSortingAlgorithm);
+        }
+
+        // TODO : FUTURE DEVELOPMENT
+        private void pause_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void play_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void stop_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
 
 
 
@@ -166,5 +203,7 @@ namespace Prototype.Views
         {
 
         }
+
+        
     }
 }

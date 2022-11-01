@@ -42,6 +42,13 @@ namespace Prototype.Views
             this.stop_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.data_values_groupBox = new System.Windows.Forms.GroupBox();
+            this.few_unique_radioButton = new System.Windows.Forms.RadioButton();
+            this.all_different_radioButton = new System.Windows.Forms.RadioButton();
+            this.starting_order_groupBox = new System.Windows.Forms.GroupBox();
+            this.reversed_radioButton = new System.Windows.Forms.RadioButton();
+            this.fairly_sorted_radioButton = new System.Windows.Forms.RadioButton();
+            this.random_radioButton = new System.Windows.Forms.RadioButton();
             this.speed_label = new System.Windows.Forms.Label();
             this.number_of_elements_trackBar = new System.Windows.Forms.TrackBar();
             this.number_of_elements_label = new System.Windows.Forms.Label();
@@ -52,20 +59,13 @@ namespace Prototype.Views
             this.algorithm1_num_swaps_label = new System.Windows.Forms.Label();
             this.algorithm2_num_comparisons_label = new System.Windows.Forms.Label();
             this.algorithm2_num_swaps_label = new System.Windows.Forms.Label();
-            this.starting_order_groupBox = new System.Windows.Forms.GroupBox();
-            this.random_radioButton = new System.Windows.Forms.RadioButton();
-            this.reversed_radioButton = new System.Windows.Forms.RadioButton();
-            this.fairly_sorted_radioButton = new System.Windows.Forms.RadioButton();
-            this.data_values_groupBox = new System.Windows.Forms.GroupBox();
-            this.few_unique_radioButton = new System.Windows.Forms.RadioButton();
-            this.all_different_radioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_picture_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_picture_box)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_track_bar)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.number_of_elements_trackBar)).BeginInit();
-            this.starting_order_groupBox.SuspendLayout();
             this.data_values_groupBox.SuspendLayout();
+            this.starting_order_groupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.number_of_elements_trackBar)).BeginInit();
             this.SuspendLayout();
             // 
             // second_algorithm_picture_box
@@ -98,7 +98,7 @@ namespace Prototype.Views
             this.start_button.TabIndex = 2;
             this.start_button.Text = "START";
             this.start_button.UseVisualStyleBackColor = false;
-            this.start_button.Click += new System.EventHandler(this.go_button_Click);
+            this.start_button.Click += new System.EventHandler(this.start_button_Click);
             // 
             // speed_track_bar
             // 
@@ -177,6 +177,7 @@ namespace Prototype.Views
             this.pause_button.TabIndex = 8;
             this.pause_button.Text = "PAUSE";
             this.pause_button.UseVisualStyleBackColor = false;
+            this.pause_button.Click += new System.EventHandler(this.pause_button_Click);
             // 
             // play_button
             // 
@@ -188,6 +189,7 @@ namespace Prototype.Views
             this.play_button.TabIndex = 9;
             this.play_button.Text = "PLAY";
             this.play_button.UseVisualStyleBackColor = false;
+            this.play_button.Click += new System.EventHandler(this.play_button_Click);
             // 
             // stop_button
             // 
@@ -199,6 +201,7 @@ namespace Prototype.Views
             this.stop_button.TabIndex = 10;
             this.stop_button.Text = "STOP";
             this.stop_button.UseVisualStyleBackColor = false;
+            this.stop_button.Click += new System.EventHandler(this.stop_button_Click);
             // 
             // panel1
             // 
@@ -225,6 +228,90 @@ namespace Prototype.Views
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(352, 804);
             this.panel2.TabIndex = 12;
+            // 
+            // data_values_groupBox
+            // 
+            this.data_values_groupBox.Controls.Add(this.few_unique_radioButton);
+            this.data_values_groupBox.Controls.Add(this.all_different_radioButton);
+            this.data_values_groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_values_groupBox.Location = new System.Drawing.Point(11, 394);
+            this.data_values_groupBox.Name = "data_values_groupBox";
+            this.data_values_groupBox.Size = new System.Drawing.Size(329, 164);
+            this.data_values_groupBox.TabIndex = 24;
+            this.data_values_groupBox.TabStop = false;
+            this.data_values_groupBox.Text = "Data values :";
+            // 
+            // few_unique_radioButton
+            // 
+            this.few_unique_radioButton.AutoSize = true;
+            this.few_unique_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.few_unique_radioButton.Location = new System.Drawing.Point(13, 69);
+            this.few_unique_radioButton.Name = "few_unique_radioButton";
+            this.few_unique_radioButton.Size = new System.Drawing.Size(138, 29);
+            this.few_unique_radioButton.TabIndex = 1;
+            this.few_unique_radioButton.Text = "Few unique";
+            this.few_unique_radioButton.UseVisualStyleBackColor = true;
+            // 
+            // all_different_radioButton
+            // 
+            this.all_different_radioButton.AutoSize = true;
+            this.all_different_radioButton.Checked = true;
+            this.all_different_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.all_different_radioButton.Location = new System.Drawing.Point(13, 34);
+            this.all_different_radioButton.Name = "all_different_radioButton";
+            this.all_different_radioButton.Size = new System.Drawing.Size(133, 29);
+            this.all_different_radioButton.TabIndex = 0;
+            this.all_different_radioButton.TabStop = true;
+            this.all_different_radioButton.Text = "All different";
+            this.all_different_radioButton.UseVisualStyleBackColor = true;
+            // 
+            // starting_order_groupBox
+            // 
+            this.starting_order_groupBox.Controls.Add(this.reversed_radioButton);
+            this.starting_order_groupBox.Controls.Add(this.fairly_sorted_radioButton);
+            this.starting_order_groupBox.Controls.Add(this.random_radioButton);
+            this.starting_order_groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.starting_order_groupBox.Location = new System.Drawing.Point(11, 224);
+            this.starting_order_groupBox.Name = "starting_order_groupBox";
+            this.starting_order_groupBox.Size = new System.Drawing.Size(329, 164);
+            this.starting_order_groupBox.TabIndex = 23;
+            this.starting_order_groupBox.TabStop = false;
+            this.starting_order_groupBox.Text = "Starting order : ";
+            // 
+            // reversed_radioButton
+            // 
+            this.reversed_radioButton.AutoSize = true;
+            this.reversed_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reversed_radioButton.Location = new System.Drawing.Point(13, 69);
+            this.reversed_radioButton.Name = "reversed_radioButton";
+            this.reversed_radioButton.Size = new System.Drawing.Size(120, 29);
+            this.reversed_radioButton.TabIndex = 1;
+            this.reversed_radioButton.Text = "Reversed";
+            this.reversed_radioButton.UseVisualStyleBackColor = true;
+            // 
+            // fairly_sorted_radioButton
+            // 
+            this.fairly_sorted_radioButton.AutoSize = true;
+            this.fairly_sorted_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.fairly_sorted_radioButton.Location = new System.Drawing.Point(12, 104);
+            this.fairly_sorted_radioButton.Name = "fairly_sorted_radioButton";
+            this.fairly_sorted_radioButton.Size = new System.Drawing.Size(143, 29);
+            this.fairly_sorted_radioButton.TabIndex = 2;
+            this.fairly_sorted_radioButton.Text = "Fairly sorted";
+            this.fairly_sorted_radioButton.UseVisualStyleBackColor = true;
+            // 
+            // random_radioButton
+            // 
+            this.random_radioButton.AutoSize = true;
+            this.random_radioButton.Checked = true;
+            this.random_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.random_radioButton.Location = new System.Drawing.Point(13, 34);
+            this.random_radioButton.Name = "random_radioButton";
+            this.random_radioButton.Size = new System.Drawing.Size(110, 29);
+            this.random_radioButton.TabIndex = 0;
+            this.random_radioButton.TabStop = true;
+            this.random_radioButton.Text = "Random";
+            this.random_radioButton.UseVisualStyleBackColor = true;
             // 
             // speed_label
             // 
@@ -269,8 +356,15 @@ namespace Prototype.Views
             // 
             // algorithm1_comboBox
             // 
+            this.algorithm1_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.algorithm1_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.algorithm1_comboBox.FormattingEnabled = true;
+            this.algorithm1_comboBox.Items.AddRange(new object[] {
+            "Bubble Sort",
+            "Insertion Sort",
+            "Merge Sort",
+            "Quick Sort",
+            "Heap Sort"});
             this.algorithm1_comboBox.Location = new System.Drawing.Point(405, 109);
             this.algorithm1_comboBox.Name = "algorithm1_comboBox";
             this.algorithm1_comboBox.Size = new System.Drawing.Size(350, 37);
@@ -278,8 +372,17 @@ namespace Prototype.Views
             // 
             // algorithm2_comboBox
             // 
+            this.algorithm2_comboBox.AutoCompleteCustomSource.AddRange(new string[] {
+            "Bubble Sort"});
+            this.algorithm2_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.algorithm2_comboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.algorithm2_comboBox.FormattingEnabled = true;
+            this.algorithm2_comboBox.Items.AddRange(new object[] {
+            "Bubble Sort",
+            "Insertion Sort",
+            "Merge Sort",
+            "Quick Sort",
+            "Heap Sort"});
             this.algorithm2_comboBox.Location = new System.Drawing.Point(838, 109);
             this.algorithm2_comboBox.Name = "algorithm2_comboBox";
             this.algorithm2_comboBox.Size = new System.Drawing.Size(350, 37);
@@ -325,90 +428,6 @@ namespace Prototype.Views
             this.algorithm2_num_swaps_label.TabIndex = 18;
             this.algorithm2_num_swaps_label.Text = "Number of swaps :";
             // 
-            // starting_order_groupBox
-            // 
-            this.starting_order_groupBox.Controls.Add(this.reversed_radioButton);
-            this.starting_order_groupBox.Controls.Add(this.fairly_sorted_radioButton);
-            this.starting_order_groupBox.Controls.Add(this.random_radioButton);
-            this.starting_order_groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.starting_order_groupBox.Location = new System.Drawing.Point(11, 224);
-            this.starting_order_groupBox.Name = "starting_order_groupBox";
-            this.starting_order_groupBox.Size = new System.Drawing.Size(329, 164);
-            this.starting_order_groupBox.TabIndex = 23;
-            this.starting_order_groupBox.TabStop = false;
-            this.starting_order_groupBox.Text = "Starting order : ";
-            // 
-            // random_radioButton
-            // 
-            this.random_radioButton.AutoSize = true;
-            this.random_radioButton.Checked = true;
-            this.random_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.random_radioButton.Location = new System.Drawing.Point(13, 34);
-            this.random_radioButton.Name = "random_radioButton";
-            this.random_radioButton.Size = new System.Drawing.Size(110, 29);
-            this.random_radioButton.TabIndex = 0;
-            this.random_radioButton.TabStop = true;
-            this.random_radioButton.Text = "Random";
-            this.random_radioButton.UseVisualStyleBackColor = true;
-            // 
-            // reversed_radioButton
-            // 
-            this.reversed_radioButton.AutoSize = true;
-            this.reversed_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reversed_radioButton.Location = new System.Drawing.Point(13, 69);
-            this.reversed_radioButton.Name = "reversed_radioButton";
-            this.reversed_radioButton.Size = new System.Drawing.Size(120, 29);
-            this.reversed_radioButton.TabIndex = 1;
-            this.reversed_radioButton.Text = "Reversed";
-            this.reversed_radioButton.UseVisualStyleBackColor = true;
-            // 
-            // fairly_sorted_radioButton
-            // 
-            this.fairly_sorted_radioButton.AutoSize = true;
-            this.fairly_sorted_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fairly_sorted_radioButton.Location = new System.Drawing.Point(12, 104);
-            this.fairly_sorted_radioButton.Name = "fairly_sorted_radioButton";
-            this.fairly_sorted_radioButton.Size = new System.Drawing.Size(143, 29);
-            this.fairly_sorted_radioButton.TabIndex = 2;
-            this.fairly_sorted_radioButton.Text = "Fairly sorted";
-            this.fairly_sorted_radioButton.UseVisualStyleBackColor = true;
-            // 
-            // data_values_groupBox
-            // 
-            this.data_values_groupBox.Controls.Add(this.few_unique_radioButton);
-            this.data_values_groupBox.Controls.Add(this.all_different_radioButton);
-            this.data_values_groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.data_values_groupBox.Location = new System.Drawing.Point(11, 394);
-            this.data_values_groupBox.Name = "data_values_groupBox";
-            this.data_values_groupBox.Size = new System.Drawing.Size(329, 164);
-            this.data_values_groupBox.TabIndex = 24;
-            this.data_values_groupBox.TabStop = false;
-            this.data_values_groupBox.Text = "Data values :";
-            // 
-            // few_unique_radioButton
-            // 
-            this.few_unique_radioButton.AutoSize = true;
-            this.few_unique_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.few_unique_radioButton.Location = new System.Drawing.Point(13, 69);
-            this.few_unique_radioButton.Name = "few_unique_radioButton";
-            this.few_unique_radioButton.Size = new System.Drawing.Size(207, 44);
-            this.few_unique_radioButton.TabIndex = 1;
-            this.few_unique_radioButton.Text = "Few unique";
-            this.few_unique_radioButton.UseVisualStyleBackColor = true;
-            // 
-            // all_different_radioButton
-            // 
-            this.all_different_radioButton.AutoSize = true;
-            this.all_different_radioButton.Checked = true;
-            this.all_different_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.all_different_radioButton.Location = new System.Drawing.Point(13, 34);
-            this.all_different_radioButton.Name = "all_different_radioButton";
-            this.all_different_radioButton.Size = new System.Drawing.Size(200, 44);
-            this.all_different_radioButton.TabIndex = 0;
-            this.all_different_radioButton.TabStop = true;
-            this.all_different_radioButton.Text = "All different";
-            this.all_different_radioButton.UseVisualStyleBackColor = true;
-            // 
             // SortingAlgorithmAnimationsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -443,11 +462,11 @@ namespace Prototype.Views
             ((System.ComponentModel.ISupportInitialize)(this.speed_track_bar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.number_of_elements_trackBar)).EndInit();
-            this.starting_order_groupBox.ResumeLayout(false);
-            this.starting_order_groupBox.PerformLayout();
             this.data_values_groupBox.ResumeLayout(false);
             this.data_values_groupBox.PerformLayout();
+            this.starting_order_groupBox.ResumeLayout(false);
+            this.starting_order_groupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.number_of_elements_trackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

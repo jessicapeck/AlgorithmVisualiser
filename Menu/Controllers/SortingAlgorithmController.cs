@@ -11,7 +11,7 @@ namespace Prototype.Controllers
     class SortingAlgorithmController
     {
         
-        public async void Sort(SortingAlgorithmAnimationsUI parentForm, int numberOfElements, string startingOrder, string dataValues)
+        public async void Sort(SortingAlgorithmAnimationsUI parentForm, int numberOfElements, string startingOrder, string dataValues, string firstChoice, string secondChoice)
         {
             // create initial data set
             List<int> firstInitialDataSet = CreateDataSet(numberOfElements);
