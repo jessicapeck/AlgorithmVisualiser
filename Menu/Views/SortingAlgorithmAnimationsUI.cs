@@ -98,9 +98,9 @@ namespace Prototype.Views
 
             int numberOfElements = number_of_elements_trackBar.Value;
 
-            (string startingOrder, string dataValues) = CollectRadioButtonData();
+            (startingOrder, dataValues) = CollectRadioButtonData();
 
-            (string firstSortingAlgorithm, string secondSortingAlgorithm) = CollectSortingAlgorithmChoices();
+            (firstSortingAlgorithm, secondSortingAlgorithm) = CollectSortingAlgorithmChoices();
 
             controller.Sort(this, numberOfElements, startingOrder, dataValues, firstSortingAlgorithm, secondSortingAlgorithm);
         }
