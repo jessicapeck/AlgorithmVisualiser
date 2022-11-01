@@ -33,8 +33,7 @@ namespace Prototype.Models
             counter++;
 
             // test : write contents of data set to console
-            //Console.WriteLine("BUBBLE SORT: " + string.Join(", ", data));
-            //Console.WriteLine(passNum);
+            //Console.WriteLine($"Pass {passNum} - BUBBLE SORT: " + string.Join(", ", data));
 
             // if end of pass and swaps have been made in the pass, reset the counter and variables
             if ((counter >= data.Count() - passNum) && (swapped == true))

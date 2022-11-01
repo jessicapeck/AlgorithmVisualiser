@@ -49,20 +49,19 @@
     <Compile Include="Controllers\SortingAlgorithmController.cs" />
     <Compile Include="Models\BubbleSort.cs" />
     <Compile Include="Models\InsertionSort.cs" />
-    <Compile Include="Models\MergeSort.cs" />
     <Compile Include="Models\MockSortingAlgorithm.cs" />
     <Compile Include="Models\SortingAlgorithm.cs" />
-    <Compile Include="Views\AlgorithmInformation.cs">
+    <Compile Include="Views\AlgorithmInformationUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\AlgorithmInformation.Designer.cs">
-      <DependentUpon>AlgorithmInformation.cs</DependentUpon>
+    <Compile Include="Views\AlgorithmInformationUI.Designer.cs">
+      <DependentUpon>AlgorithmInformationUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Interactive.cs">
+    <Compile Include="Views\InteractiveUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Interactive.Designer.cs">
-      <DependentUpon>Interactive.cs</DependentUpon>
+    <Compile Include="Views\InteractiveUI.Designer.cs">
+      <DependentUpon>InteractiveUI.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Menu.cs">
       <SubType>Form</SubType>
@@ -72,23 +71,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\PrototypeUI.cs">
+    <Compile Include="Views\SortingAlgorithmAnimationsUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\PrototypeUI.Designer.cs">
-      <DependentUpon>PrototypeUI.cs</DependentUpon>
+    <Compile Include="Views\SortingAlgorithmAnimationsUI.Designer.cs">
+      <DependentUpon>SortingAlgorithmAnimationsUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ShortestPathAlgorithms.cs">
+    <Compile Include="Views\ShortestPathAlgorithmsUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\ShortestPathAlgorithms.Designer.cs">
-      <DependentUpon>ShortestPathAlgorithms.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SortingAlgorithmAnimationUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SortingAlgorithmAnimationUI.Designer.cs">
-      <DependentUpon>SortingAlgorithmAnimationUI.cs</DependentUpon>
+    <Compile Include="Views\ShortestPathAlgorithmsUI.Designer.cs">
+      <DependentUpon>ShortestPathAlgorithmsUI.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Views\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
@@ -103,11 +96,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\PrototypeUI.resx">
-      <DependentUpon>PrototypeUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SortingAlgorithmAnimationUI.resx">
-      <DependentUpon>SortingAlgorithmAnimationUI.cs</DependentUpon>
+    <EmbeddedResource Include="Views\SortingAlgorithmAnimationsUI.resx">
+      <DependentUpon>SortingAlgorithmAnimationsUI.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

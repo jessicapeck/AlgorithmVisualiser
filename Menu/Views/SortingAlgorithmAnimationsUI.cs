@@ -1,0 +1,170 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using Prototype.Controllers;
+
+namespace Prototype.Views
+{
+    public partial class SortingAlgorithmAnimationsUI : Form
+    {
+
+        private List<int> firstAlgorithmBarHeights;
+        private List<int> secondAlgorithmBarHeights;
+
+        // declare a white pen and a black pen for drawing data bars
+        private Pen whitePen = new Pen(Color.LightGray);
+        private Pen blackPen = new Pen(Color.Black);
+
+        // radio button values
+        private string startingOrder;
+        private string dataValues;
+
+        public SortingAlgorithmAnimationsUI()
+        {
+            InitializeComponent();
+
+            UISetup();
+
+        }
+
+        // setup for initial form UI
+        private void UISetup()
+        {
+            sorting_algorithms_button.BackColor = Color.Orange;
+            sorting_algorithms_button.ForeColor = Color.Black;
+            sorting_algorithms_button.Enabled = false;
+
+        }
+
+
+
+        private void go_button_Click(object sender, EventArgs e)
+        {
+            SortingAlgorithmController controller = new SortingAlgorithmController();
+
+            // collect data from animation preferences
+
+            int numberOfElements = number_of_elements_trackBar.Value;
+
+            (string startingOrder, string dataValues) = CollectRadioButtonData();
+
+            controller.Sort(this, numberOfElements, startingOrder, dataValues);
+        }
+
+        private (string, string) CollectRadioButtonData()
+        {            
+            // get checked option from starting order list
+            if (random_radioButton.Checked == true)
+            {
+                startingOrder = random_radioButton.Text;
+            }
+            else if (reversed_radioButton.Checked == true)
+            {
+                startingOrder = reversed_radioButton.Text;
+            }
+            else if (fairly_sorted_radioButton.Checked == true)
+            {
+                startingOrder = fairly_sorted_radioButton.Text;
+            }
+
+            // get checked option from data values list
+            if (all_different_radioButton.Checked == true)
+            {
+                dataValues = all_different_radioButton.Text;
+            }
+            else if (few_unique_radioButton.Checked == true)
+            {
+                dataValues = few_unique_radioButton.Text;
+            }
+
+            return (startingOrder, dataValues);
+        }
+
+
+
+
+        public async Task UpdateUI(int stepNumber, List<int> data1, List<int> data2)
+        {
+            firstAlgorithmBarHeights = data1;
+            secondAlgorithmBarHeights = data2;
+
+            // refresh both picture boxes
+            first_algorithm_picture_box.Refresh();
+            second_algorithm_picture_box.Refresh();
+
+            // wait time
+            await Task.Delay(this.speed_track_bar.Value);
+            
+            //Console.WriteLine(stepNumber);
+        }
+
+        private void drawBars(Graphics g, List<int> barHeights)
+        {
+            // identify the maximum element in the list
+            int maxHeight = barHeights.Max();
+
+            // define the scaling of the lines
+            int xScaling = ((first_algorithm_picture_box.Width - 10 - (5 * barHeights.Count)) / barHeights.Count);
+            int yScaling = (first_algorithm_picture_box.Height - 10) / maxHeight;
+
+            // set the width of the pens to the scaling in the x-direction
+            whitePen.Width = xScaling;
+            blackPen.Width = xScaling;
+
+            // define starting x and y positions within the picture box
+            int xPosition = 10 + (xScaling / 2);
+            int yPosition = first_algorithm_picture_box.Height - 10;
+
+            // iterate through each data element in the list
+            // first draw a white line of max height to cover up previous line
+            // then draw a black line of the correct heights
+            foreach (int barHeight in barHeights)
+            {
+                g.DrawLine(whitePen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (maxHeight * yScaling)));
+                g.DrawLine(blackPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * yScaling)));
+
+                xPosition += xScaling + 5;
+
+            }
+        }
+
+        private void first_algorithm_picture_box_Paint(object sender, PaintEventArgs e)
+        {
+            if (firstAlgorithmBarHeights != null)
+            {
+                drawBars(e.Graphics, firstAlgorithmBarHeights);
+            }
+
+        }
+
+        private void second_algorithm_picture_box_Paint(object sender, PaintEventArgs e)
+        {
+            if (secondAlgorithmBarHeights != null)
+            {
+                drawBars(e.Graphics, secondAlgorithmBarHeights);
+            }
+        }
+
+        // TODO : FUTURE DEVELOPMENT
+        private void shortest_path_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void interactive_algorithms_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facts_information_button_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}

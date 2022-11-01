@@ -41,8 +41,8 @@ namespace Prototype
 
         private void sorting_algorithm_animations_button_Click(object sender, EventArgs e)
         {
-            var cheese = new SortingComparison();
-            cheese.Show();
+            //var cheese = new SortingAlgorithmAnimationUI();
+            //cheese.Show();
         }
 
         private void shortest_path_algorithms_button_Click(object sender, EventArgs e)
