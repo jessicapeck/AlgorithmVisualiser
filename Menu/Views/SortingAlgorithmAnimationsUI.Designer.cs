@@ -110,7 +110,7 @@ namespace Prototype.Views
             this.speed_track_bar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.speed_track_bar.Size = new System.Drawing.Size(330, 69);
             this.speed_track_bar.TabIndex = 3;
-            this.speed_track_bar.Value = 260;
+            this.speed_track_bar.Value = 300;
             // 
             // sorting_algorithms_button
             // 
@@ -365,7 +365,7 @@ namespace Prototype.Views
             "Merge Sort",
             "Quick Sort",
             "Heap Sort"});
-            this.algorithm1_comboBox.Location = new System.Drawing.Point(405, 109);
+            this.algorithm1_comboBox.Location = new System.Drawing.Point(405, 106);
             this.algorithm1_comboBox.Name = "algorithm1_comboBox";
             this.algorithm1_comboBox.Size = new System.Drawing.Size(350, 37);
             this.algorithm1_comboBox.TabIndex = 13;
@@ -383,7 +383,7 @@ namespace Prototype.Views
             "Merge Sort",
             "Quick Sort",
             "Heap Sort"});
-            this.algorithm2_comboBox.Location = new System.Drawing.Point(838, 109);
+            this.algorithm2_comboBox.Location = new System.Drawing.Point(838, 106);
             this.algorithm2_comboBox.Name = "algorithm2_comboBox";
             this.algorithm2_comboBox.Size = new System.Drawing.Size(350, 37);
             this.algorithm2_comboBox.TabIndex = 14;

@@ -122,7 +122,129 @@ namespace Prototype.Controllers
 
         private List<int> CreateDataSet(int numberOfElements, string startingOrder, string dataValues)
         {
-            return new List<int> { 15, 19, 4, 20, 5, 8, 3, 7, 1, 16, 14, 18, 2, 6, 9, 13, 11, 17, 10, 12 };
+            List<int> dataSet1 = new List<int> { };
+
+            // add each number from 1 to numberOfElements to dataSet
+            if (dataValues == "All different")
+            {
+                for (int counter = 1; counter <= numberOfElements; counter++)
+                {
+                    dataSet1.Add(counter);
+                }
+
+                // TEST
+                //Console.WriteLine(string.Join(", ", dataSet1));
+            }
+            // add 2-3 of each element
+            else if (dataValues == "Few unique")
+            {
+                int counter = 1;
+
+                // loop until the correct number of elements have been added to the list
+                while (counter < numberOfElements)
+                {
+                    // add three lots of every third element to list unless there are 4 left
+                    if (((numberOfElements - dataSet1.Count()) >= 3) && ((numberOfElements - dataSet1.Count()) != 4))
+                    {
+                        for (int i = 0; i<3; i++)
+                        {
+                            dataSet1.Add(counter);
+                        }
+
+                        counter += 3;
+                    }
+                    // if there are 4 elements left, add 2 lots of every second element left
+                    else if ((numberOfElements - dataSet1.Count()) == 4)
+                    {
+                        for (int i = 0; i < 4; i++)
+                        {
+                            dataSet1.Add(counter);
+                        }
+
+                        counter += 4;
+                    }
+                    // if there are 2 elements left, add 2 lots the current value of counter
+                    else if ((numberOfElements - dataSet1.Count()) == 2)
+                    {
+                        for (int i = 0; i < 2; i++)
+                        {
+                            dataSet1.Add(counter);
+                        }
+
+                        counter += 2;
+                    }
+                }
+            }
+
+            List<int> dataSet2 = new List<int> { };
+            bool firstTry = true;
+            Random rnd = new Random();
+            
+            // reverse dataSet1
+            List<int> dataSet1Reversed = new List<int>(dataSet1);
+            dataSet1Reversed.Reverse();
+
+            if (startingOrder == "Random")
+            {
+                // enter loop if dataSet2 is already ordered, or it is the first try of creating dataSet2
+                while ((dataSet2 == dataSet1) || (dataSet2 == dataSet1Reversed) || firstTry)
+                {
+                    dataSet2.RemoveRange(0, dataSet2.Count());
+                    List<int> dataSet1Copy = new List<int> (dataSet1);
+                    
+                    for (int i = 0; i < numberOfElements; i++)
+                    {
+                        // get number of elements in original data set
+                        int maxIndex = dataSet1Copy.Count();
+
+                        // generate a random number to represent an index in the original data set
+                        int randomIndex = rnd.Next(0, maxIndex);
+
+                        // add the element at the random index in original data set to new data set
+                        dataSet2.Add(dataSet1Copy[randomIndex]);
+                        // remove the element selected from the original data set
+                        dataSet1Copy.RemoveAt(randomIndex);
+                    }
+
+                    firstTry = false;
+                }
+                    
+            }
+            else if (startingOrder == "Reversed")
+            {
+                // set dataSet2 to equal the reversed version of dataSet1
+                dataSet2 = dataSet1Reversed;
+            }
+            else if (startingOrder == "Fairly sorted")
+            {
+                // define leftIndex and rightIndex as the first elements to be swapped
+                int leftIndex = 1;
+                int rightIndex = dataSet1.Count() - 2;
+                // declare temp variables to be used in swap
+                int temp;
+
+                // define dataSet2 to initially be dataSet1
+                dataSet2 = dataSet1;
+
+                // starting from leftIndex and right Index, swap every third from start index with third from end index
+                while (leftIndex <= numberOfElements / 2)
+                {
+                    // swap
+                    temp = dataSet2[leftIndex];
+                    dataSet2[leftIndex] = dataSet2[rightIndex];
+                    dataSet2[rightIndex] = temp;
+
+                    // increment leftIndex by 3
+                    leftIndex += 3;
+                    // decrement rightIndex by 3
+                    rightIndex -= 3;
+                }
+            }
+
+            // TEST
+            //Console.WriteLine(string.Join(", ", dataSet2));
+
+            return dataSet2;
         }
     }
 }
