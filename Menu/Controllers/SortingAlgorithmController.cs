@@ -12,56 +12,34 @@ namespace Prototype.Controllers
     {
         private SortingAlgorithm firstAlgorithm;
         private SortingAlgorithm secondAlgorithm;
+        private SortingAlgorithm tempAlgorithm;
 
-        private (SortingAlgorithm, SortingAlgorithm) CreateInstanceOfAlgorithms(string firstChoice, string secondChoice)
+        private SortingAlgorithm CreateInstanceOfAlgorithm(string choice)
         {
-            // create an instance of the first sorting algorithm
-            if (firstChoice == "Bubble Sort")
+            // create an instance of algorithm corresponding to input value
+            if (choice == "Bubble Sort")
             {
-                firstAlgorithm = new BubbleSort();
+                tempAlgorithm = new BubbleSort();
             }
-            else if (firstChoice == "Insertion Sort")
+            else if (choice == "Insertion Sort")
             {
-                firstAlgorithm = new InsertionSort();
+                tempAlgorithm = new InsertionSort();
             }
-            else if (firstChoice == "Merge Sort")
-            {
-                // TODO : FURTHER DEVELOPMENT
-            }
-            else if (firstChoice == "Quick Sort")
+            else if (choice == "Merge Sort")
             {
                 // TODO : FURTHER DEVELOPMENT
             }
-            else if (firstChoice == "Heap Sort")
+            else if (choice == "Quick Sort")
             {
                 // TODO : FURTHER DEVELOPMENT
             }
-
-
-            // create an instance of the second algorithm
-            if (secondChoice == "Bubble Sort")
-            {
-                secondAlgorithm = new BubbleSort();
-            }
-            else if (secondChoice == "Insertion Sort")
-            {
-                secondAlgorithm = new InsertionSort();
-            }
-            else if (secondChoice == "Merge Sort")
-            {
-                // TODO : FURTHER DEVELOPMENT
-            }
-            else if (secondChoice == "Quick Sort")
-            {
-                // TODO : FURTHER DEVELOPMENT
-            }
-            else if (secondChoice == "Heap Sort")
+            else if (choice == "Heap Sort")
             {
                 // TODO : FURTHER DEVELOPMENT
             }
 
-            // return firstAlgorithm and secondAlgorithm
-            return (firstAlgorithm, secondAlgorithm);
+            // return tempAlgorithm
+            return tempAlgorithm;
         }
 
         public async void Sort(SortingAlgorithmAnimationsUI parentForm, int numberOfElements, string startingOrder, string dataValues, string firstChoice, string secondChoice)
@@ -79,7 +57,8 @@ namespace Prototype.Controllers
             List<int> secondInitialDataSet = new List<int>(firstInitialDataSet);
 
             // create an instance of the sorting algorithms
-            (firstAlgorithm, secondAlgorithm) = CreateInstanceOfAlgorithms(firstChoice, secondChoice);
+            firstAlgorithm = CreateInstanceOfAlgorithm(firstChoice);
+            secondAlgorithm = CreateInstanceOfAlgorithm(secondChoice);
 
             // pass initial data set to sorting algorithms
             firstAlgorithm.DataSet = firstInitialDataSet;
