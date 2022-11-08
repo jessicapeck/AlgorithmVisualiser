@@ -135,12 +135,15 @@ namespace Prototype.Controllers
                     // if there are 4 elements left, add 2 lots of every second element left
                     else if ((numberOfElements - dataSet1.Count()) == 4)
                     {
-                        for (int i = 0; i < 4; i++)
+                        for (int i = 0; i < 2; i++)
                         {
-                            dataSet1.Add(counter);
-                        }
+                            for (int j = 0; j < 2; j++)
+                            {
+                                dataSet1.Add(counter);
+                            }
 
-                        counter += 4;
+                            counter += 2;
+                        }
                     }
                     // if there are 2 elements left, add 2 lots the current value of counter
                     else if ((numberOfElements - dataSet1.Count()) == 2)
