@@ -17,8 +17,8 @@ namespace Prototype.Views
         private List<int> firstAlgorithmBarHeights;
         private List<int> secondAlgorithmBarHeights;
 
-        // declare a white pen and a black pen for drawing data bars
-        private Pen whitePen = new Pen(Color.LightGray);
+        // declare a light grey pen and a black pen for drawing data bars
+        private Pen lightGrayPen = new Pen(Color.LightGray);
         private Pen blackPen = new Pen(Color.Black);
 
         // radio button values
@@ -36,15 +36,19 @@ namespace Prototype.Views
             InitializeComponent();
 
             UISetup();
-
         }
 
         // setup for initial form UI
         private void UISetup()
         {
+            // set colour for current feature button
             sorting_algorithms_button.BackColor = Color.Orange;
             sorting_algorithms_button.ForeColor = Color.Black;
             sorting_algorithms_button.Enabled = false;
+
+            // set default values for radio buttons
+            random_radioButton.Checked = true;
+            all_different_radioButton.Checked = true;
 
             // set default values for combo boxes to choose sorting algorithm
             algorithm1_comboBox.SelectedIndex = 0;
@@ -132,11 +136,11 @@ namespace Prototype.Views
             secondAlgorithmBarHeights = data2;
 
             // refresh both picture boxes
-            first_algorithm_picture_box.Refresh();
-            second_algorithm_picture_box.Refresh();
+            first_algorithm_pictureBox.Refresh();
+            second_algorithm_pictureBox.Refresh();
 
             // wait time
-            await Task.Delay(this.speed_track_bar.Value);
+            await Task.Delay(this.speed_trackBar.Value);
             
             //Console.WriteLine(stepNumber);
         }
@@ -147,23 +151,23 @@ namespace Prototype.Views
             int maxHeight = barHeights.Max();
 
             // define the scaling of the lines
-            int xScaling = ((first_algorithm_picture_box.Width - 10 - (5 * barHeights.Count)) / barHeights.Count);
-            int yScaling = (first_algorithm_picture_box.Height - 10) / maxHeight;
+            int xScaling = ((first_algorithm_pictureBox.Width - 10 - (5 * barHeights.Count)) / barHeights.Count);
+            int yScaling = (first_algorithm_pictureBox.Height - 10) / maxHeight;
 
             // set the width of the pens to the scaling in the x-direction
-            whitePen.Width = xScaling;
+            lightGrayPen.Width = xScaling;
             blackPen.Width = xScaling;
 
             // define starting x and y positions within the picture box
             int xPosition = 10 + (xScaling / 2);
-            int yPosition = first_algorithm_picture_box.Height - 10;
+            int yPosition = first_algorithm_pictureBox.Height - 10;
 
             // iterate through each data element in the list
             // first draw a white line of max height to cover up previous line
             // then draw a black line of the correct heights
             foreach (int barHeight in barHeights)
             {
-                g.DrawLine(whitePen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (maxHeight * yScaling)));
+                g.DrawLine(lightGrayPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (maxHeight * yScaling)));
                 g.DrawLine(blackPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * yScaling)));
 
                 xPosition += xScaling + 5;

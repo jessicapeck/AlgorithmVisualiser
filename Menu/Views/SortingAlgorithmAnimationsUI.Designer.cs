@@ -29,10 +29,10 @@ namespace Prototype.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.second_algorithm_picture_box = new System.Windows.Forms.PictureBox();
-            this.first_algorithm_picture_box = new System.Windows.Forms.PictureBox();
+            this.second_algorithm_pictureBox = new System.Windows.Forms.PictureBox();
+            this.first_algorithm_pictureBox = new System.Windows.Forms.PictureBox();
             this.start_button = new System.Windows.Forms.Button();
-            this.speed_track_bar = new System.Windows.Forms.TrackBar();
+            this.speed_trackBar = new System.Windows.Forms.TrackBar();
             this.sorting_algorithms_button = new System.Windows.Forms.Button();
             this.interactive_algorithms_button = new System.Windows.Forms.Button();
             this.facts_information_button = new System.Windows.Forms.Button();
@@ -59,34 +59,34 @@ namespace Prototype.Views
             this.algorithm1_num_swaps_label = new System.Windows.Forms.Label();
             this.algorithm2_num_comparisons_label = new System.Windows.Forms.Label();
             this.algorithm2_num_swaps_label = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_picture_box)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_picture_box)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speed_track_bar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
             this.panel2.SuspendLayout();
             this.data_values_groupBox.SuspendLayout();
             this.starting_order_groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.number_of_elements_trackBar)).BeginInit();
             this.SuspendLayout();
             // 
-            // second_algorithm_picture_box
+            // second_algorithm_pictureBox
             // 
-            this.second_algorithm_picture_box.BackColor = System.Drawing.Color.LightGray;
-            this.second_algorithm_picture_box.Location = new System.Drawing.Point(838, 152);
-            this.second_algorithm_picture_box.Name = "second_algorithm_picture_box";
-            this.second_algorithm_picture_box.Size = new System.Drawing.Size(350, 400);
-            this.second_algorithm_picture_box.TabIndex = 0;
-            this.second_algorithm_picture_box.TabStop = false;
-            this.second_algorithm_picture_box.Paint += new System.Windows.Forms.PaintEventHandler(this.second_algorithm_picture_box_Paint);
+            this.second_algorithm_pictureBox.BackColor = System.Drawing.Color.LightGray;
+            this.second_algorithm_pictureBox.Location = new System.Drawing.Point(838, 152);
+            this.second_algorithm_pictureBox.Name = "second_algorithm_pictureBox";
+            this.second_algorithm_pictureBox.Size = new System.Drawing.Size(350, 400);
+            this.second_algorithm_pictureBox.TabIndex = 0;
+            this.second_algorithm_pictureBox.TabStop = false;
+            this.second_algorithm_pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.second_algorithm_picture_box_Paint);
             // 
-            // first_algorithm_picture_box
+            // first_algorithm_pictureBox
             // 
-            this.first_algorithm_picture_box.BackColor = System.Drawing.Color.LightGray;
-            this.first_algorithm_picture_box.Location = new System.Drawing.Point(405, 152);
-            this.first_algorithm_picture_box.Name = "first_algorithm_picture_box";
-            this.first_algorithm_picture_box.Size = new System.Drawing.Size(350, 400);
-            this.first_algorithm_picture_box.TabIndex = 1;
-            this.first_algorithm_picture_box.TabStop = false;
-            this.first_algorithm_picture_box.Paint += new System.Windows.Forms.PaintEventHandler(this.first_algorithm_picture_box_Paint);
+            this.first_algorithm_pictureBox.BackColor = System.Drawing.Color.LightGray;
+            this.first_algorithm_pictureBox.Location = new System.Drawing.Point(405, 152);
+            this.first_algorithm_pictureBox.Name = "first_algorithm_pictureBox";
+            this.first_algorithm_pictureBox.Size = new System.Drawing.Size(350, 400);
+            this.first_algorithm_pictureBox.TabIndex = 1;
+            this.first_algorithm_pictureBox.TabStop = false;
+            this.first_algorithm_pictureBox.Paint += new System.Windows.Forms.PaintEventHandler(this.first_algorithm_picture_box_Paint);
             // 
             // start_button
             // 
@@ -100,17 +100,17 @@ namespace Prototype.Views
             this.start_button.UseVisualStyleBackColor = false;
             this.start_button.Click += new System.EventHandler(this.start_button_Click);
             // 
-            // speed_track_bar
+            // speed_trackBar
             // 
-            this.speed_track_bar.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.speed_track_bar.Location = new System.Drawing.Point(10, 663);
-            this.speed_track_bar.Maximum = 500;
-            this.speed_track_bar.Minimum = 15;
-            this.speed_track_bar.Name = "speed_track_bar";
-            this.speed_track_bar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.speed_track_bar.Size = new System.Drawing.Size(330, 69);
-            this.speed_track_bar.TabIndex = 3;
-            this.speed_track_bar.Value = 300;
+            this.speed_trackBar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.speed_trackBar.Location = new System.Drawing.Point(10, 663);
+            this.speed_trackBar.Maximum = 500;
+            this.speed_trackBar.Minimum = 15;
+            this.speed_trackBar.Name = "speed_trackBar";
+            this.speed_trackBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.speed_trackBar.Size = new System.Drawing.Size(330, 69);
+            this.speed_trackBar.TabIndex = 3;
+            this.speed_trackBar.Value = 300;
             // 
             // sorting_algorithms_button
             // 
@@ -223,7 +223,7 @@ namespace Prototype.Views
             this.panel2.Controls.Add(this.number_of_elements_trackBar);
             this.panel2.Controls.Add(this.number_of_elements_label);
             this.panel2.Controls.Add(this.animation_preferences_label);
-            this.panel2.Controls.Add(this.speed_track_bar);
+            this.panel2.Controls.Add(this.speed_trackBar);
             this.panel2.Location = new System.Drawing.Point(12, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(352, 804);
@@ -448,8 +448,8 @@ namespace Prototype.Views
             this.Controls.Add(this.interactive_algorithms_button);
             this.Controls.Add(this.sorting_algorithms_button);
             this.Controls.Add(this.start_button);
-            this.Controls.Add(this.first_algorithm_picture_box);
-            this.Controls.Add(this.second_algorithm_picture_box);
+            this.Controls.Add(this.first_algorithm_pictureBox);
+            this.Controls.Add(this.second_algorithm_pictureBox);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -457,9 +457,9 @@ namespace Prototype.Views
             this.MinimumSize = new System.Drawing.Size(1234, 890);
             this.Name = "SortingAlgorithmAnimationsUI";
             this.Text = "PrototypeUI";
-            ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_picture_box)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_picture_box)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.speed_track_bar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.data_values_groupBox.ResumeLayout(false);
@@ -474,10 +474,10 @@ namespace Prototype.Views
 
         #endregion
 
-        private System.Windows.Forms.PictureBox second_algorithm_picture_box;
-        private System.Windows.Forms.PictureBox first_algorithm_picture_box;
+        private System.Windows.Forms.PictureBox second_algorithm_pictureBox;
+        private System.Windows.Forms.PictureBox first_algorithm_pictureBox;
         private System.Windows.Forms.Button start_button;
-        private System.Windows.Forms.TrackBar speed_track_bar;
+        private System.Windows.Forms.TrackBar speed_trackBar;
         private System.Windows.Forms.Button sorting_algorithms_button;
         private System.Windows.Forms.Button interactive_algorithms_button;
         private System.Windows.Forms.Button facts_information_button;
