@@ -11,7 +11,19 @@ namespace Prototype.Models
         
         protected List<int> data;
 
-       // getter and setter for data
+        // define boolean states for comparisonStep and swapStep
+        protected bool comparisonStep = true;
+        protected bool swapStep = false;
+
+        // define counters for number of comparisons and swaps
+        protected int numberOfComparisons = 0;
+        protected int numberOfSwaps = 0;
+
+        // to keep track of whether the data set is fully sorted or not
+        protected bool sorted = false;
+
+
+        // getter and setter for data
         public List<int> DataSet
         {
             get
@@ -24,11 +36,32 @@ namespace Prototype.Models
             }
         }
 
-        public abstract List<int> PerformStep();
+        // getter and setter for numberOfComparisons
+        public int NumberOfComparisons
+        {
+            get
+            {
+                return numberOfComparisons;
+            }
+            set
+            {
+                numberOfComparisons = value;
+            }
+        }
 
-        // to keep track of whether the data set is fully sorted or not
-        protected bool sorted = false;
-        
+        // getter and setter for numberOfSwaps
+        public int NumberOfSwaps
+        {
+            get
+            {
+                return numberOfSwaps;
+            }
+            set
+            {
+                numberOfSwaps = value;
+            }
+        }
+
         // getter and setter for sorted
         public bool Sorted
         {
@@ -41,6 +74,8 @@ namespace Prototype.Models
                 sorted = value;
             }
         }
+
+        public abstract List<int> PerformStep();
 
     }
 }

@@ -11,8 +11,7 @@ namespace Prototype.Models
         // startIndex to keep track of starting point
         private int startIndex = 1;
         private int counter = 1;
-
-        
+                
         // used in swap
         private int temp;
 
@@ -21,21 +20,41 @@ namespace Prototype.Models
             // check if starting point exceeds end of list
             if (startIndex < data.Count())
             {
-                // swap data elements if right item is less than the left item
-                if (data[counter] < data[counter - 1])
+                if (comparisonStep)
                 {
+                    // if a swap needs to be made, change boolean states of comparisonStep and swapStep
+                    if (data[counter] < data[counter - 1])
+                    {
+                        comparisonStep = false;
+                        swapStep = true;
+                    }
+                    // if a swap is not required, increment the value of startIndex and begin again from that point
+                    // boolean states remain unchanged
+                    else
+                    {
+                        startIndex++;
+                        counter = startIndex;
+                    }
+
+                    // increment comparison counter
+                    numberOfComparisons++;
+                }
+                else if (swapStep)
+                {
+                    // swap data elements
                     temp = data[counter - 1];
                     data[counter - 1] = data[counter];
                     data[counter] = temp;
 
                     // decrement counter
                     counter--;
-                }
-                // if there has not been a swap, increment the value of startIndex and begin again from that point
-                else
-                {
-                    startIndex++;
-                    counter = startIndex;
+
+                    // change boolean states of comparisonStep and swapStep
+                    comparisonStep = true;
+                    swapStep = false;
+
+                    // increment swap counter
+                    numberOfSwaps++;
                 }
 
                 // check if counter has hit 0

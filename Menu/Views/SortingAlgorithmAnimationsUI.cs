@@ -130,8 +130,9 @@ namespace Prototype.Views
 
 
 
-        public async Task UpdateUI(int stepNumber, List<int> data1, List<int> data2)
+        public async Task UpdateUI(int stepNumber, List<int> data1, List<int> data2, int comparisonNum1, int swapNum1, int comparisonNum2, int swapNum2)
         {
+
             firstAlgorithmBarHeights = data1;
             secondAlgorithmBarHeights = data2;
 
@@ -139,10 +140,22 @@ namespace Prototype.Views
             first_algorithm_pictureBox.Refresh();
             second_algorithm_pictureBox.Refresh();
 
+            // update comparison and swap counters
+            UpdateComparisonSwapCounters(comparisonNum1, swapNum1, comparisonNum2, swapNum2);
+
             // wait time
             await Task.Delay(this.speed_trackBar.Value);
-            
+
             //Console.WriteLine(stepNumber);
+        }
+
+        private void UpdateComparisonSwapCounters(int comparisonNum1, int swapNum1, int comparisonNum2, int swapNum2)
+        {
+            // change the text on the comparison and swap labels
+            algorithm1_num_comparisons_label.Text = $"Number of comparisons : {comparisonNum1}";
+            algorithm1_num_swaps_label.Text = $"Number of swaps : {swapNum1}";
+            algorithm2_num_comparisons_label.Text = $"Number of comparisons : {comparisonNum2}";
+            algorithm2_num_swaps_label.Text = $"Number of swaps : {swapNum2}";
         }
 
         private void drawBars(Graphics g, List<int> barHeights)

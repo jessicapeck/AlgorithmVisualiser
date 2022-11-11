@@ -90,8 +90,14 @@ namespace Prototype.Controllers
                     secondAlgorithmData = secondAlgorithm.DataSet;
                 }
 
+                // get comparison and swap values
+                int comparisonNum1 = firstAlgorithm.NumberOfComparisons;
+                int swapNum1 = firstAlgorithm.NumberOfSwaps;
+                int comparisonNum2 = secondAlgorithm.NumberOfComparisons;
+                int swapNum2 = secondAlgorithm.NumberOfSwaps;
+
                 // update the UI
-                await parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData);
+                await parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData, comparisonNum1, swapNum1, comparisonNum2, swapNum2);
                 
                 // check if both algorithms are fully sorted
                 finished = firstAlgorithm.Sorted && secondAlgorithm.Sorted;

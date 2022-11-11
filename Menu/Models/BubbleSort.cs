@@ -19,19 +19,43 @@ namespace Prototype.Models
 
         public override List<int> PerformStep()
         {
-            // swap data elements if left item is greater than the right item
-            if (data[counter] > data[counter + 1])
+            if (comparisonStep)
             {
+                // if a swap needs to be made, change boolean states of comparisonStep and swapStep
+                if (data[counter] > data[counter + 1])
+                {
+                    comparisonStep = false;
+                    swapStep = true;
+                }
+                // if a swap is not required, increment the counter, boolean states remain unchanged
+                else
+                {
+                    counter++;
+                }
+
+                // incremented comparison counter
+                numberOfComparisons++;
+            }
+            else if (swapStep)
+            {
+                // swap data elements
                 temp = data[counter + 1];
                 data[counter + 1] = data[counter];
                 data[counter] = temp;
 
-                swapped = true;
+                swapped = true;                
+
+                // increment counter by 1
+                counter++;
+
+                // change boolean states of comparisonStep and swapStep
+                comparisonStep = true;
+                swapStep = false;
+
+                // increment swap counter
+                numberOfSwaps++;
             }
-
-            // increment counter by 1
-            counter++;
-
+            
             // TEST : write contents of data set to console
             //Console.WriteLine($"Pass {passNum} - BUBBLE SORT: " + string.Join(", ", data));
 
