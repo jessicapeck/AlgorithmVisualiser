@@ -25,11 +25,11 @@ namespace Prototype.Controllers
             {
                 tempAlgorithm = new InsertionSort();
             }
-            else if (choice == "Merge Sort")
-            {
-                // TODO : FURTHER DEVELOPMENT
-            }
             else if (choice == "Quick Sort")
+            {
+                tempAlgorithm = new QuickSort();
+            }
+            else if (choice == "Merge Sort")
             {
                 // TODO : FURTHER DEVELOPMENT
             }

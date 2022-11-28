@@ -48,8 +48,11 @@
   <ItemGroup>
     <Compile Include="Controllers\SortingAlgorithmController.cs" />
     <Compile Include="Models\BubbleSort.cs" />
+    <Compile Include="Models\HeapSort.cs" />
     <Compile Include="Models\InsertionSort.cs" />
+    <Compile Include="Models\MergeSort.cs" />
     <Compile Include="Models\MockSortingAlgorithm.cs" />
+    <Compile Include="Models\QuickSort.cs" />
     <Compile Include="Models\SortingAlgorithm.cs" />
     <Compile Include="Views\AlgorithmInformationUI.cs">
       <SubType>Form</SubType>
