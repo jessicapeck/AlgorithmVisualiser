@@ -24,8 +24,11 @@ namespace Prototype.Views
         private List<(int, int)> firstAlgorithmSpecialColours;
         private List<(int, int)> secondAlgorithmSpecialColours;
 
-        // declare a light grey pen for drawing covereing up previous data bars
+        // declare a light grey pen for drawing covering up previous data bars
         private Pen lightGrayPen = new Pen(Color.LightGray);
+
+        // declare a black pen
+        private Pen blackPen = new Pen(Color.Black);
 
         // declare special colour pen
         private Pen pen2 = new Pen(Color.Black);
@@ -192,6 +195,8 @@ namespace Prototype.Views
             int xPosition = 10 + (xScaling / 2);
             int yPosition = first_algorithm_pictureBox.Height - 10;
 
+            // FUTURE MAINTENANCE : uncomment for no special coloured bars, only black
+            
             // iterate through each data element in the list
             // first draw a white line of max height to cover up previous line
             // then draw a black line of the correct heights
@@ -205,7 +210,6 @@ namespace Prototype.Views
 
             //}
 
-            // TODO
             for (int barIndex = 0; barIndex < barHeights.Count(); barIndex++)
             {
                 barHeight = barHeights[barIndex];
