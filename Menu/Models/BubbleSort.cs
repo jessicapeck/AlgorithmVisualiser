@@ -21,6 +21,11 @@ namespace Prototype.Models
         {
             if (comparisonStep)
             {
+                // set special colours for elements being compared
+                specialColours.Clear();
+                specialColours.Add((counter, 1));
+                specialColours.Add((counter + 1, 1));
+
                 // if a swap needs to be made, change boolean states of comparisonStep and swapStep
                 if (data[counter] > data[counter + 1])
                 {
@@ -43,7 +48,12 @@ namespace Prototype.Models
                 data[counter + 1] = data[counter];
                 data[counter] = temp;
 
-                swapped = true;                
+                swapped = true;
+
+                // set special colours for elements being swapped
+                specialColours.Clear();
+                specialColours.Add((counter, 1));
+                specialColours.Add((counter + 1, 1));
 
                 // increment counter by 1
                 counter++;

@@ -22,6 +22,9 @@ namespace Prototype.Models
         // to keep track of whether the data set is fully sorted or not
         protected bool sorted = false;
 
+        // for storing special colour indexes and colour codes in form : (element index, colour code)
+        protected List<(int, int)> specialColours = new List<(int, int)>{ };
+
 
         // getter and setter for data
         public List<int> DataSet
@@ -72,6 +75,18 @@ namespace Prototype.Models
             set
             {
                 sorted = value;
+            }
+        }
+
+        public List<(int,int)> SpecialColours
+        {
+            get
+            {
+                return specialColours;
+            }
+            set
+            {
+                specialColours = value;
             }
         }
 

@@ -17,9 +17,20 @@ namespace Prototype.Views
         private List<int> firstAlgorithmBarHeights;
         private List<int> secondAlgorithmBarHeights;
 
-        // declare a light grey pen and a black pen for drawing data bars
+        private int barHeight;
+        private List<int> specialColourIndexes = new List<int> { };
+        int specialColourIndex;
+
+        private List<(int, int)> firstAlgorithmSpecialColours;
+        private List<(int, int)> secondAlgorithmSpecialColours;
+
+        // declare a light grey pen for drawing covereing up previous data bars
         private Pen lightGrayPen = new Pen(Color.LightGray);
-        private Pen blackPen = new Pen(Color.Black);
+
+        // declare special colour pen
+        private Pen pen2 = new Pen(Color.Black);
+
+        private int colourNum;
 
         // radio button values
         private string startingOrder;
@@ -130,11 +141,14 @@ namespace Prototype.Views
 
 
 
-        public async Task UpdateUI(int stepNumber, List<int> data1, List<int> data2, int comparisonNum1, int swapNum1, int comparisonNum2, int swapNum2)
+        public async Task UpdateUI(int stepNumber, List<int> data1, List<int> data2, int comparisonNum1, int swapNum1, int comparisonNum2, int swapNum2, List<(int, int)> specialColours1, List<(int, int)> specialColours2)
         {
 
             firstAlgorithmBarHeights = data1;
             secondAlgorithmBarHeights = data2;
+
+            firstAlgorithmSpecialColours = specialColours1;
+            secondAlgorithmSpecialColours = specialColours2;
 
             // refresh both picture boxes
             first_algorithm_pictureBox.Refresh();
@@ -158,10 +172,13 @@ namespace Prototype.Views
             algorithm2_num_swaps_label.Text = $"Number of swaps : {swapNum2}";
         }
 
-        private void drawBars(Graphics g, List<int> barHeights)
+        private void drawBars(Graphics g, List<int> barHeights, List<(int,int)> specialColours)
         {
             // identify the maximum element in the list
             int maxHeight = barHeights.Max();
+
+            // get special colour indexes from list of tuples
+            specialColourIndexes = specialColours.Select(t => t.Item1).ToList();
 
             // define the scaling of the lines
             int xScaling = ((first_algorithm_pictureBox.Width - 10 - (5 * barHeights.Count)) / barHeights.Count);
@@ -169,7 +186,7 @@ namespace Prototype.Views
 
             // set the width of the pens to the scaling in the x-direction
             lightGrayPen.Width = xScaling;
-            blackPen.Width = xScaling;
+            pen2.Width = xScaling;
 
             // define starting x and y positions within the picture box
             int xPosition = 10 + (xScaling / 2);
@@ -178,10 +195,44 @@ namespace Prototype.Views
             // iterate through each data element in the list
             // first draw a white line of max height to cover up previous line
             // then draw a black line of the correct heights
-            foreach (int barHeight in barHeights)
+
+            //foreach (int barHeight in barHeights)
+            //{
+            //    g.DrawLine(lightGrayPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (maxHeight * yScaling)));
+            //    g.DrawLine(blackPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * yScaling)));
+
+            //    xPosition += xScaling + 5;
+
+            //}
+
+            // TODO
+            for (int barIndex = 0; barIndex < barHeights.Count(); barIndex++)
             {
+                barHeight = barHeights[barIndex];
+
+                // check if index of current bar is in specialColourIndexes
+                if (specialColourIndexes.Contains(barIndex))
+                {
+                    // get pen colour corresponding to colourNum
+                    specialColourIndex = specialColourIndexes.IndexOf(barIndex);
+                    colourNum = specialColours[specialColourIndex].Item2;
+
+                    if (colourNum == 1)
+                    {
+                        pen2.Color = Color.MediumPurple;
+                    }
+                    else if (colourNum == 2)
+                    {
+                        pen2.Color = Color.MediumAquamarine;
+                    }
+                }
+                else
+                {
+                    pen2.Color = Color.Black;
+                }
+
                 g.DrawLine(lightGrayPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (maxHeight * yScaling)));
-                g.DrawLine(blackPen, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * yScaling)));
+                g.DrawLine(pen2, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * yScaling)));
 
                 xPosition += xScaling + 5;
 
@@ -192,7 +243,7 @@ namespace Prototype.Views
         {
             if (firstAlgorithmBarHeights != null)
             {
-                drawBars(e.Graphics, firstAlgorithmBarHeights);
+                drawBars(e.Graphics, firstAlgorithmBarHeights, firstAlgorithmSpecialColours);
             }
 
         }
@@ -201,7 +252,7 @@ namespace Prototype.Views
         {
             if (secondAlgorithmBarHeights != null)
             {
-                drawBars(e.Graphics, secondAlgorithmBarHeights);
+                drawBars(e.Graphics, secondAlgorithmBarHeights, secondAlgorithmSpecialColours);
             }
         }
 

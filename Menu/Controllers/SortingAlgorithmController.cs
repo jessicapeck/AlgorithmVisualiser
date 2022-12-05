@@ -96,8 +96,12 @@ namespace Prototype.Controllers
                 int comparisonNum2 = secondAlgorithm.NumberOfComparisons;
                 int swapNum2 = secondAlgorithm.NumberOfSwaps;
 
+                // get special colour indexes and colour code
+                List<(int, int)> specialColours1 = firstAlgorithm.SpecialColours;
+                List<(int, int)> specialColours2 = secondAlgorithm.SpecialColours;
+
                 // update the UI
-                await parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData, comparisonNum1, swapNum1, comparisonNum2, swapNum2);
+                await parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData, comparisonNum1, swapNum1, comparisonNum2, swapNum2, specialColours1, specialColours2);
                 
                 // check if both algorithms are fully sorted
                 finished = firstAlgorithm.Sorted && secondAlgorithm.Sorted;

@@ -42,6 +42,10 @@ namespace Prototype.Models
 
             if (comparisonStep)
             {
+                // set special colours for elements being compared, pivotIndex is main element
+                specialColours.Clear();
+                specialColours.Add((pivotIndex, 2));
+                specialColours.Add((counter, 1));
 
                 // compare value of counter to value of pivotIndex
                 if (counter != pivotIndex)
@@ -106,6 +110,11 @@ namespace Prototype.Models
 
                 // decrement pivotIndex to maintain same pivot element
                 pivotIndex--;
+
+                // set special colours for elements being swapped, pivotIndex is main element
+                specialColours.Clear();
+                specialColours.Add((pivotIndex, 2));
+                specialColours.Add((originalPivotIndex, 1));
 
                 // change boolean states of comparisonStep and swapStep
                 swapStep = false;
