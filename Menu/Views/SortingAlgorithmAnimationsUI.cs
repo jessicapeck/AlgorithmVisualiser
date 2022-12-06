@@ -43,6 +43,11 @@ namespace Prototype.Views
         private string firstSortingAlgorithm;
         private string secondSortingAlgorithm;
 
+        // controller
+        private SortingAlgorithmController controller;
+
+        // to determine if picture box needs to be cleared
+        private bool stopAnimations = false;
 
 
         public SortingAlgorithmAnimationsUI()
@@ -67,6 +72,21 @@ namespace Prototype.Views
             // set default values for combo boxes to choose sorting algorithm
             algorithm1_comboBox.SelectedIndex = 0;
             algorithm2_comboBox.SelectedIndex = 0;
+
+            // set up START PAUSE PLAY STOP button controls
+            start_button.Enabled = true;
+            pause_button.Enabled = false;
+            play_button.Enabled = false;
+            stop_button.Enabled = false;
+        }
+
+        public void AlgorithmsFinished()
+        {
+            // set up START PAUSE PLAY STOP button controls
+            start_button.Enabled = true;
+            pause_button.Enabled = false;
+            play_button.Enabled = false;
+            stop_button.Enabled = false;
         }
 
         private (string, string) CollectRadioButtonData()
@@ -110,7 +130,14 @@ namespace Prototype.Views
 
         private void start_button_Click(object sender, EventArgs e)
         {
-            SortingAlgorithmController controller = new SortingAlgorithmController();
+            // disable START button, enable PAUSE and STOP button
+            start_button.Enabled = false;
+            pause_button.Enabled = true;
+            play_button.Enabled = false;
+            stop_button.Enabled = true;
+
+            // create new instance of SortingAlgorithmController
+            controller = new SortingAlgorithmController();
 
             // collect data from animation preferences
 
@@ -120,31 +147,58 @@ namespace Prototype.Views
 
             (firstSortingAlgorithm, secondSortingAlgorithm) = CollectSortingAlgorithmChoices();
 
-            controller.Sort(this, numberOfElements, startingOrder, dataValues, firstSortingAlgorithm, secondSortingAlgorithm);
+            controller.PlayAnimations();
+            controller.SetUpPreferences(numberOfElements, startingOrder, dataValues, firstSortingAlgorithm, secondSortingAlgorithm);
+            controller.Sort(this);
+
         }
 
-        // TODO : FUTURE DEVELOPMENT
         private void pause_button_Click(object sender, EventArgs e)
         {
+            // disable PAUSE button, enable PLAY and STOP button
+            start_button.Enabled = false;
+            pause_button.Enabled = false;
+            play_button.Enabled = true;
+            stop_button.Enabled = true;
 
+            controller.PauseAnimations();
         }
 
         private void play_button_Click(object sender, EventArgs e)
         {
+            // disable PLAY button, enable PAUSE and STOP button
+            start_button.Enabled = false;
+            pause_button.Enabled = true;
+            play_button.Enabled = false;
+            stop_button.Enabled = true;
+
+            controller.PlayAnimations();
+            controller.Sort(this);
 
         }
 
         private void stop_button_Click(object sender, EventArgs e)
         {
+            // disable PAUSE, PLAY, and STOP button, enable START button
+            start_button.Enabled = true;
+            pause_button.Enabled = false;
+            play_button.Enabled = false;
+            stop_button.Enabled = false;
 
+            controller.PauseAnimations();
+
+            // set stopAnimations to true
+            stopAnimations = true;
+
+            // refresh both picture boxes
+            first_algorithm_pictureBox.Refresh();
+            second_algorithm_pictureBox.Refresh();
+
+            // set stopAnimations to false
+            stopAnimations = false;
         }
 
-        
-
-
-
-
-        public async Task UpdateUI(int stepNumber, List<int> data1, List<int> data2, int comparisonNum1, int swapNum1, int comparisonNum2, int swapNum2, List<(int, int)> specialColours1, List<(int, int)> specialColours2)
+        public async Task UpdateUI(List<int> data1, List<int> data2, int comparisonNum1, int swapNum1, int comparisonNum2, int swapNum2, List<(int, int)> specialColours1, List<(int, int)> specialColours2)
         {
 
             firstAlgorithmBarHeights = data1;
@@ -175,7 +229,7 @@ namespace Prototype.Views
             algorithm2_num_swaps_label.Text = $"Number of swaps : {swapNum2}";
         }
 
-        private void drawBars(Graphics g, List<int> barHeights, List<(int,int)> specialColours)
+        private void DrawBars(Graphics g, List<int> barHeights, List<(int,int)> specialColours)
         {
             // identify the maximum element in the list
             int maxHeight = barHeights.Max();
@@ -227,7 +281,7 @@ namespace Prototype.Views
                     }
                     else if (colourNum == 2)
                     {
-                        pen2.Color = Color.MediumAquamarine;
+                        pen2.Color = Color.Teal;
                     }
                 }
                 else
@@ -243,20 +297,37 @@ namespace Prototype.Views
             }
         }
 
+        private void ClearPictureBoxes(Graphics g)
+        {
+            // clear picture box with solid background colour
+            g.Clear(Color.LightGray);
+        }
+
         private void first_algorithm_picture_box_Paint(object sender, PaintEventArgs e)
         {
-            if (firstAlgorithmBarHeights != null)
+            // clear picture boxes if STOP button clicked
+            if (stopAnimations)
             {
-                drawBars(e.Graphics, firstAlgorithmBarHeights, firstAlgorithmSpecialColours);
+                ClearPictureBoxes(e.Graphics);
             }
-
+            // call DrawBars if firstAlgorithmBarHeights not null
+            else if (firstAlgorithmBarHeights != null)
+            {
+                DrawBars(e.Graphics, firstAlgorithmBarHeights, firstAlgorithmSpecialColours);
+            }
         }
 
         private void second_algorithm_picture_box_Paint(object sender, PaintEventArgs e)
         {
-            if (secondAlgorithmBarHeights != null)
+            // clear picture boxes if STOP button clicked
+            if (stopAnimations)
             {
-                drawBars(e.Graphics, secondAlgorithmBarHeights, secondAlgorithmSpecialColours);
+                ClearPictureBoxes(e.Graphics);
+            }
+            // call DrawBars if secondAlgorithmBarHeights not null
+            else if (secondAlgorithmBarHeights != null)
+            {
+                DrawBars(e.Graphics, secondAlgorithmBarHeights, secondAlgorithmSpecialColours);
             }
         }
 

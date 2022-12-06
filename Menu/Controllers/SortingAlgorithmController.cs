@@ -14,6 +14,13 @@ namespace Prototype.Controllers
         private SortingAlgorithm secondAlgorithm;
         private SortingAlgorithm tempAlgorithm;
 
+        private List<int> firstAlgorithmData;
+        private List<int> secondAlgorithmData;
+
+        private bool runAnimations;
+
+
+
         private SortingAlgorithm CreateInstanceOfAlgorithm(string choice)
         {
             // create an instance of algorithm corresponding to input value
@@ -42,7 +49,7 @@ namespace Prototype.Controllers
             return tempAlgorithm;
         }
 
-        public async void Sort(SortingAlgorithmAnimationsUI parentForm, int numberOfElements, string startingOrder, string dataValues, string firstChoice, string secondChoice)
+        public void SetUpPreferences(int numberOfElements, string startingOrder, string dataValues, string firstChoice, string secondChoice)
         {
             // TEST
             //Console.WriteLine($"number of elements : {numberOfElements}");
@@ -64,18 +71,18 @@ namespace Prototype.Controllers
             firstAlgorithm.DataSet = firstInitialDataSet;
             secondAlgorithm.DataSet = secondInitialDataSet;
 
-            bool finished = firstAlgorithm.Sorted && secondAlgorithm.Sorted;
 
             List<int> firstAlgorithmData = new List<int>();
             List<int> secondAlgorithmData = new List<int>();
+        }
 
-            int stepNumber = 0;
-
+        public async void Sort(SortingAlgorithmAnimationsUI parentForm)
+        {   
+            bool finished = firstAlgorithm.Sorted && secondAlgorithm.Sorted;
 
             // keep going until both algorithms are sorted
-            while (!finished)
+            while ((!finished) && (runAnimations))
             {
-                stepNumber++;
 
                 // tell each algorithm to perform one step and return the current state of the data if not already sorted
                 if (!firstAlgorithm.Sorted)
@@ -101,10 +108,15 @@ namespace Prototype.Controllers
                 List<(int, int)> specialColours2 = secondAlgorithm.SpecialColours;
 
                 // update the UI
-                await parentForm.UpdateUI(stepNumber, firstAlgorithmData, secondAlgorithmData, comparisonNum1, swapNum1, comparisonNum2, swapNum2, specialColours1, specialColours2);
+                await parentForm.UpdateUI(firstAlgorithmData, secondAlgorithmData, comparisonNum1, swapNum1, comparisonNum2, swapNum2, specialColours1, specialColours2);
                 
                 // check if both algorithms are fully sorted
                 finished = firstAlgorithm.Sorted && secondAlgorithm.Sorted;
+
+                if (finished)
+                {
+                    parentForm.AlgorithmsFinished();
+                }
             }
 
         }
@@ -237,6 +249,19 @@ namespace Prototype.Controllers
             //Console.WriteLine(string.Join(", ", dataSet2));
 
             return dataSet2;
+        }
+
+
+        public void PauseAnimations()
+        {
+            // set runAnimations to false
+            runAnimations = false;
+        }
+
+        public void PlayAnimations()
+        {
+            // set runAnimations to true
+            runAnimations = true;
         }
     }
 }

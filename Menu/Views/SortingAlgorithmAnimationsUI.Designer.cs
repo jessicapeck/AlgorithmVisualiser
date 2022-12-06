@@ -122,7 +122,7 @@ namespace Prototype.Views
             this.sorting_algorithms_button.Location = new System.Drawing.Point(23, 12);
             this.sorting_algorithms_button.Name = "sorting_algorithms_button";
             this.sorting_algorithms_button.Size = new System.Drawing.Size(361, 41);
-            this.sorting_algorithms_button.TabIndex = 4;
+            this.sorting_algorithms_button.TabIndex = 1;
             this.sorting_algorithms_button.Text = "Sorting Algorithm Animations";
             this.sorting_algorithms_button.UseVisualStyleBackColor = false;
             // 
@@ -135,7 +135,7 @@ namespace Prototype.Views
             this.interactive_algorithms_button.Location = new System.Drawing.Point(390, 12);
             this.interactive_algorithms_button.Name = "interactive_algorithms_button";
             this.interactive_algorithms_button.Size = new System.Drawing.Size(193, 41);
-            this.interactive_algorithms_button.TabIndex = 5;
+            this.interactive_algorithms_button.TabIndex = 2;
             this.interactive_algorithms_button.Text = "Interactive";
             this.interactive_algorithms_button.UseVisualStyleBackColor = false;
             this.interactive_algorithms_button.Click += new System.EventHandler(this.interactive_algorithms_button_Click);
