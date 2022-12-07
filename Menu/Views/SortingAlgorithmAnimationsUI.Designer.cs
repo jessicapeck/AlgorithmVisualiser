@@ -59,6 +59,7 @@ namespace Prototype.Views
             this.algorithm1_num_swaps_label = new System.Windows.Forms.Label();
             this.algorithm2_num_comparisons_label = new System.Windows.Forms.Label();
             this.algorithm2_num_swaps_label = new System.Windows.Forms.Label();
+            this.number_of_elements_counter_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
@@ -95,7 +96,7 @@ namespace Prototype.Views
             this.start_button.Location = new System.Drawing.Point(405, 724);
             this.start_button.Name = "start_button";
             this.start_button.Size = new System.Drawing.Size(165, 74);
-            this.start_button.TabIndex = 2;
+            this.start_button.TabIndex = 7;
             this.start_button.Text = "START";
             this.start_button.UseVisualStyleBackColor = false;
             this.start_button.Click += new System.EventHandler(this.start_button_Click);
@@ -122,7 +123,7 @@ namespace Prototype.Views
             this.sorting_algorithms_button.Location = new System.Drawing.Point(23, 12);
             this.sorting_algorithms_button.Name = "sorting_algorithms_button";
             this.sorting_algorithms_button.Size = new System.Drawing.Size(361, 41);
-            this.sorting_algorithms_button.TabIndex = 1;
+            this.sorting_algorithms_button.TabIndex = 0;
             this.sorting_algorithms_button.Text = "Sorting Algorithm Animations";
             this.sorting_algorithms_button.UseVisualStyleBackColor = false;
             // 
@@ -135,7 +136,7 @@ namespace Prototype.Views
             this.interactive_algorithms_button.Location = new System.Drawing.Point(390, 12);
             this.interactive_algorithms_button.Name = "interactive_algorithms_button";
             this.interactive_algorithms_button.Size = new System.Drawing.Size(193, 41);
-            this.interactive_algorithms_button.TabIndex = 2;
+            this.interactive_algorithms_button.TabIndex = 1;
             this.interactive_algorithms_button.Text = "Interactive";
             this.interactive_algorithms_button.UseVisualStyleBackColor = false;
             this.interactive_algorithms_button.Click += new System.EventHandler(this.interactive_algorithms_button_Click);
@@ -149,7 +150,7 @@ namespace Prototype.Views
             this.facts_information_button.Location = new System.Drawing.Point(589, 12);
             this.facts_information_button.Name = "facts_information_button";
             this.facts_information_button.Size = new System.Drawing.Size(310, 41);
-            this.facts_information_button.TabIndex = 6;
+            this.facts_information_button.TabIndex = 2;
             this.facts_information_button.Text = "Facts and Information";
             this.facts_information_button.UseVisualStyleBackColor = false;
             this.facts_information_button.Click += new System.EventHandler(this.facts_information_button_Click);
@@ -163,7 +164,7 @@ namespace Prototype.Views
             this.shortest_path_button.Location = new System.Drawing.Point(905, 12);
             this.shortest_path_button.Name = "shortest_path_button";
             this.shortest_path_button.Size = new System.Drawing.Size(306, 41);
-            this.shortest_path_button.TabIndex = 7;
+            this.shortest_path_button.TabIndex = 3;
             this.shortest_path_button.Text = "Shortest Path Algorithm";
             this.shortest_path_button.UseVisualStyleBackColor = false;
             // 
@@ -217,6 +218,7 @@ namespace Prototype.Views
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.Controls.Add(this.number_of_elements_counter_label);
             this.panel2.Controls.Add(this.data_values_groupBox);
             this.panel2.Controls.Add(this.starting_order_groupBox);
             this.panel2.Controls.Add(this.speed_label);
@@ -227,7 +229,7 @@ namespace Prototype.Views
             this.panel2.Location = new System.Drawing.Point(12, 74);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(352, 804);
-            this.panel2.TabIndex = 12;
+            this.panel2.TabIndex = 6;
             // 
             // data_values_groupBox
             // 
@@ -237,7 +239,7 @@ namespace Prototype.Views
             this.data_values_groupBox.Location = new System.Drawing.Point(11, 394);
             this.data_values_groupBox.Name = "data_values_groupBox";
             this.data_values_groupBox.Size = new System.Drawing.Size(329, 164);
-            this.data_values_groupBox.TabIndex = 24;
+            this.data_values_groupBox.TabIndex = 2;
             this.data_values_groupBox.TabStop = false;
             this.data_values_groupBox.Text = "Data values :";
             // 
@@ -274,7 +276,7 @@ namespace Prototype.Views
             this.starting_order_groupBox.Location = new System.Drawing.Point(11, 224);
             this.starting_order_groupBox.Name = "starting_order_groupBox";
             this.starting_order_groupBox.Size = new System.Drawing.Size(329, 164);
-            this.starting_order_groupBox.TabIndex = 23;
+            this.starting_order_groupBox.TabIndex = 1;
             this.starting_order_groupBox.TabStop = false;
             this.starting_order_groupBox.Text = "Starting order : ";
             // 
@@ -330,8 +332,9 @@ namespace Prototype.Views
             this.number_of_elements_trackBar.Minimum = 5;
             this.number_of_elements_trackBar.Name = "number_of_elements_trackBar";
             this.number_of_elements_trackBar.Size = new System.Drawing.Size(317, 69);
-            this.number_of_elements_trackBar.TabIndex = 14;
+            this.number_of_elements_trackBar.TabIndex = 0;
             this.number_of_elements_trackBar.Value = 12;
+            this.number_of_elements_trackBar.ValueChanged += new System.EventHandler(this.number_of_elements_trackBar_ValueChanged);
             // 
             // number_of_elements_label
             // 
@@ -368,7 +371,7 @@ namespace Prototype.Views
             this.algorithm1_comboBox.Location = new System.Drawing.Point(405, 106);
             this.algorithm1_comboBox.Name = "algorithm1_comboBox";
             this.algorithm1_comboBox.Size = new System.Drawing.Size(350, 37);
-            this.algorithm1_comboBox.TabIndex = 13;
+            this.algorithm1_comboBox.TabIndex = 4;
             // 
             // algorithm2_comboBox
             // 
@@ -386,7 +389,7 @@ namespace Prototype.Views
             this.algorithm2_comboBox.Location = new System.Drawing.Point(838, 106);
             this.algorithm2_comboBox.Name = "algorithm2_comboBox";
             this.algorithm2_comboBox.Size = new System.Drawing.Size(350, 37);
-            this.algorithm2_comboBox.TabIndex = 14;
+            this.algorithm2_comboBox.TabIndex = 5;
             // 
             // algorithm1_num_comparisons_label
             // 
@@ -425,8 +428,19 @@ namespace Prototype.Views
             this.algorithm2_num_swaps_label.Location = new System.Drawing.Point(833, 640);
             this.algorithm2_num_swaps_label.Name = "algorithm2_num_swaps_label";
             this.algorithm2_num_swaps_label.Size = new System.Drawing.Size(213, 29);
-            this.algorithm2_num_swaps_label.TabIndex = 18;
+            this.algorithm2_num_swaps_label.TabIndex = 11;
             this.algorithm2_num_swaps_label.Text = "Number of swaps :";
+            // 
+            // number_of_elements_counter_label
+            // 
+            this.number_of_elements_counter_label.AutoSize = true;
+            this.number_of_elements_counter_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number_of_elements_counter_label.ForeColor = System.Drawing.Color.MediumBlue;
+            this.number_of_elements_counter_label.Location = new System.Drawing.Point(271, 78);
+            this.number_of_elements_counter_label.Name = "number_of_elements_counter_label";
+            this.number_of_elements_counter_label.Size = new System.Drawing.Size(39, 29);
+            this.number_of_elements_counter_label.TabIndex = 23;
+            this.number_of_elements_counter_label.Text = "12";
             // 
             // SortingAlgorithmAnimationsUI
             // 
@@ -504,5 +518,6 @@ namespace Prototype.Views
         private System.Windows.Forms.GroupBox data_values_groupBox;
         private System.Windows.Forms.RadioButton few_unique_radioButton;
         private System.Windows.Forms.RadioButton all_different_radioButton;
+        private System.Windows.Forms.Label number_of_elements_counter_label;
     }
 }

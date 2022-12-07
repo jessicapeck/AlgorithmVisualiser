@@ -75,18 +75,41 @@ namespace Prototype.Views
 
             // set up START PAUSE PLAY STOP button controls
             start_button.Enabled = true;
+            start_button.BackColor = Color.MediumSeaGreen;
+
             pause_button.Enabled = false;
+            pause_button.BackColor = Color.Gray;
+
             play_button.Enabled = false;
+            play_button.BackColor = Color.Gray;
+
             stop_button.Enabled = false;
+            stop_button.BackColor = Color.Gray;
+
+            // set text for number of elements label
+            number_of_elements_counter_label.Text = number_of_elements_trackBar.Value.ToString();
+        }
+
+        private void number_of_elements_trackBar_ValueChanged(object sender, EventArgs e)
+        {
+            // set text for number of elements label
+            number_of_elements_counter_label.Text = number_of_elements_trackBar.Value.ToString();
         }
 
         public void AlgorithmsFinished()
         {
             // set up START PAUSE PLAY STOP button controls
             start_button.Enabled = true;
+            start_button.BackColor = Color.MediumSeaGreen;
+
             pause_button.Enabled = false;
+            pause_button.BackColor = Color.Gray;
+
             play_button.Enabled = false;
+            play_button.BackColor = Color.Gray;
+
             stop_button.Enabled = false;
+            stop_button.BackColor = Color.Gray;
         }
 
         private (string, string) CollectRadioButtonData()
@@ -132,9 +155,16 @@ namespace Prototype.Views
         {
             // disable START button, enable PAUSE and STOP button
             start_button.Enabled = false;
+            start_button.BackColor = Color.Gray;
+
             pause_button.Enabled = true;
+            pause_button.BackColor = Color.CornflowerBlue;
+
             play_button.Enabled = false;
+            play_button.BackColor = Color.Gray;
+
             stop_button.Enabled = true;
+            stop_button.BackColor = Color.OrangeRed;
 
             // create new instance of SortingAlgorithmController
             controller = new SortingAlgorithmController();
@@ -157,9 +187,17 @@ namespace Prototype.Views
         {
             // disable PAUSE button, enable PLAY and STOP button
             start_button.Enabled = false;
+            start_button.BackColor = Color.Gray;
+
             pause_button.Enabled = false;
+            pause_button.BackColor = Color.Gray;
+
             play_button.Enabled = true;
+            play_button.BackColor = Color.CornflowerBlue;
+
             stop_button.Enabled = true;
+            stop_button.BackColor = Color.OrangeRed;
+
 
             controller.PauseAnimations();
         }
@@ -168,9 +206,16 @@ namespace Prototype.Views
         {
             // disable PLAY button, enable PAUSE and STOP button
             start_button.Enabled = false;
+            start_button.BackColor = Color.Gray;
+
             pause_button.Enabled = true;
+            pause_button.BackColor = Color.CornflowerBlue;
+
             play_button.Enabled = false;
+            play_button.BackColor = Color.Gray;
+
             stop_button.Enabled = true;
+            stop_button.BackColor = Color.OrangeRed;
 
             controller.PlayAnimations();
             controller.Sort(this);
@@ -181,9 +226,16 @@ namespace Prototype.Views
         {
             // disable PAUSE, PLAY, and STOP button, enable START button
             start_button.Enabled = true;
+            start_button.BackColor = Color.MediumSeaGreen;
+
             pause_button.Enabled = false;
+            pause_button.BackColor = Color.Gray;
+
             play_button.Enabled = false;
+            play_button.BackColor = Color.Gray;
+
             stop_button.Enabled = false;
+            stop_button.BackColor = Color.Gray;
 
             controller.PauseAnimations();
 
@@ -347,6 +399,5 @@ namespace Prototype.Views
 
         }
 
-        
     }
 }
