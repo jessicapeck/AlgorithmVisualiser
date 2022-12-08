@@ -18,7 +18,7 @@ namespace Prototype.Views
         private List<int> secondAlgorithmBarHeights;
 
         private int barHeight;
-        private List<int> specialColourIndexes = new List<int> { };
+        private List<int> specialColourIndexes;
         int specialColourIndex;
 
         private List<(int, int)> firstAlgorithmSpecialColours;

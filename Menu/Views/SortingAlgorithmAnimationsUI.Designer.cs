@@ -42,6 +42,7 @@ namespace Prototype.Views
             this.stop_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.number_of_elements_counter_label = new System.Windows.Forms.Label();
             this.data_values_groupBox = new System.Windows.Forms.GroupBox();
             this.few_unique_radioButton = new System.Windows.Forms.RadioButton();
             this.all_different_radioButton = new System.Windows.Forms.RadioButton();
@@ -59,7 +60,6 @@ namespace Prototype.Views
             this.algorithm1_num_swaps_label = new System.Windows.Forms.Label();
             this.algorithm2_num_comparisons_label = new System.Windows.Forms.Label();
             this.algorithm2_num_swaps_label = new System.Windows.Forms.Label();
-            this.number_of_elements_counter_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
@@ -230,6 +230,17 @@ namespace Prototype.Views
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(352, 804);
             this.panel2.TabIndex = 6;
+            // 
+            // number_of_elements_counter_label
+            // 
+            this.number_of_elements_counter_label.AutoSize = true;
+            this.number_of_elements_counter_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.number_of_elements_counter_label.ForeColor = System.Drawing.Color.MediumBlue;
+            this.number_of_elements_counter_label.Location = new System.Drawing.Point(271, 78);
+            this.number_of_elements_counter_label.Name = "number_of_elements_counter_label";
+            this.number_of_elements_counter_label.Size = new System.Drawing.Size(39, 29);
+            this.number_of_elements_counter_label.TabIndex = 23;
+            this.number_of_elements_counter_label.Text = "12";
             // 
             // data_values_groupBox
             // 
@@ -431,21 +442,11 @@ namespace Prototype.Views
             this.algorithm2_num_swaps_label.TabIndex = 11;
             this.algorithm2_num_swaps_label.Text = "Number of swaps :";
             // 
-            // number_of_elements_counter_label
-            // 
-            this.number_of_elements_counter_label.AutoSize = true;
-            this.number_of_elements_counter_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.number_of_elements_counter_label.ForeColor = System.Drawing.Color.MediumBlue;
-            this.number_of_elements_counter_label.Location = new System.Drawing.Point(271, 78);
-            this.number_of_elements_counter_label.Name = "number_of_elements_counter_label";
-            this.number_of_elements_counter_label.Size = new System.Drawing.Size(39, 29);
-            this.number_of_elements_counter_label.TabIndex = 23;
-            this.number_of_elements_counter_label.Text = "12";
-            // 
             // SortingAlgorithmAnimationsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1234, 890);
             this.Controls.Add(this.algorithm2_num_swaps_label);
