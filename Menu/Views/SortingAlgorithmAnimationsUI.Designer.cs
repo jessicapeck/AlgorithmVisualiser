@@ -48,7 +48,7 @@ namespace Prototype.Views
             this.all_different_radioButton = new System.Windows.Forms.RadioButton();
             this.starting_order_groupBox = new System.Windows.Forms.GroupBox();
             this.reversed_radioButton = new System.Windows.Forms.RadioButton();
-            this.fairly_sorted_radioButton = new System.Windows.Forms.RadioButton();
+            this.partially_sorted_radioButton = new System.Windows.Forms.RadioButton();
             this.random_radioButton = new System.Windows.Forms.RadioButton();
             this.speed_label = new System.Windows.Forms.Label();
             this.number_of_elements_trackBar = new System.Windows.Forms.TrackBar();
@@ -172,7 +172,7 @@ namespace Prototype.Views
             // 
             this.pause_button.BackColor = System.Drawing.Color.CornflowerBlue;
             this.pause_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.pause_button.Location = new System.Drawing.Point(626, 724);
+            this.pause_button.Location = new System.Drawing.Point(612, 724);
             this.pause_button.Name = "pause_button";
             this.pause_button.Size = new System.Drawing.Size(165, 74);
             this.pause_button.TabIndex = 8;
@@ -184,7 +184,7 @@ namespace Prototype.Views
             // 
             this.play_button.BackColor = System.Drawing.Color.CornflowerBlue;
             this.play_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.play_button.Location = new System.Drawing.Point(797, 724);
+            this.play_button.Location = new System.Drawing.Point(811, 724);
             this.play_button.Name = "play_button";
             this.play_button.Size = new System.Drawing.Size(165, 74);
             this.play_button.TabIndex = 9;
@@ -258,7 +258,7 @@ namespace Prototype.Views
             // 
             this.few_unique_radioButton.AutoSize = true;
             this.few_unique_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.few_unique_radioButton.Location = new System.Drawing.Point(13, 69);
+            this.few_unique_radioButton.Location = new System.Drawing.Point(13, 70);
             this.few_unique_radioButton.Name = "few_unique_radioButton";
             this.few_unique_radioButton.Size = new System.Drawing.Size(138, 29);
             this.few_unique_radioButton.TabIndex = 1;
@@ -281,7 +281,7 @@ namespace Prototype.Views
             // starting_order_groupBox
             // 
             this.starting_order_groupBox.Controls.Add(this.reversed_radioButton);
-            this.starting_order_groupBox.Controls.Add(this.fairly_sorted_radioButton);
+            this.starting_order_groupBox.Controls.Add(this.partially_sorted_radioButton);
             this.starting_order_groupBox.Controls.Add(this.random_radioButton);
             this.starting_order_groupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.starting_order_groupBox.Location = new System.Drawing.Point(11, 224);
@@ -295,23 +295,23 @@ namespace Prototype.Views
             // 
             this.reversed_radioButton.AutoSize = true;
             this.reversed_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.reversed_radioButton.Location = new System.Drawing.Point(13, 69);
+            this.reversed_radioButton.Location = new System.Drawing.Point(13, 70);
             this.reversed_radioButton.Name = "reversed_radioButton";
             this.reversed_radioButton.Size = new System.Drawing.Size(120, 29);
             this.reversed_radioButton.TabIndex = 1;
             this.reversed_radioButton.Text = "Reversed";
             this.reversed_radioButton.UseVisualStyleBackColor = true;
             // 
-            // fairly_sorted_radioButton
+            // partially_sorted_radioButton
             // 
-            this.fairly_sorted_radioButton.AutoSize = true;
-            this.fairly_sorted_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fairly_sorted_radioButton.Location = new System.Drawing.Point(12, 104);
-            this.fairly_sorted_radioButton.Name = "fairly_sorted_radioButton";
-            this.fairly_sorted_radioButton.Size = new System.Drawing.Size(143, 29);
-            this.fairly_sorted_radioButton.TabIndex = 2;
-            this.fairly_sorted_radioButton.Text = "Fairly sorted";
-            this.fairly_sorted_radioButton.UseVisualStyleBackColor = true;
+            this.partially_sorted_radioButton.AutoSize = true;
+            this.partially_sorted_radioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.partially_sorted_radioButton.Location = new System.Drawing.Point(13, 106);
+            this.partially_sorted_radioButton.Name = "partially_sorted_radioButton";
+            this.partially_sorted_radioButton.Size = new System.Drawing.Size(164, 29);
+            this.partially_sorted_radioButton.TabIndex = 2;
+            this.partially_sorted_radioButton.Text = "Partially sorted";
+            this.partially_sorted_radioButton.UseVisualStyleBackColor = true;
             // 
             // random_radioButton
             // 
@@ -515,7 +515,7 @@ namespace Prototype.Views
         private System.Windows.Forms.GroupBox starting_order_groupBox;
         private System.Windows.Forms.RadioButton random_radioButton;
         private System.Windows.Forms.RadioButton reversed_radioButton;
-        private System.Windows.Forms.RadioButton fairly_sorted_radioButton;
+        private System.Windows.Forms.RadioButton partially_sorted_radioButton;
         private System.Windows.Forms.GroupBox data_values_groupBox;
         private System.Windows.Forms.RadioButton few_unique_radioButton;
         private System.Windows.Forms.RadioButton all_different_radioButton;

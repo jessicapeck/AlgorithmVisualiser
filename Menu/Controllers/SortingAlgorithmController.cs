@@ -38,7 +38,7 @@ namespace Prototype.Controllers
             }
             else if (choice == "Merge Sort")
             {
-                // TODO : FURTHER DEVELOPMENT
+                tempAlgorithm = new MergeSort();
             }
             else if (choice == "Heap Sort")
             {
@@ -219,7 +219,7 @@ namespace Prototype.Controllers
                 // set dataSet2 to equal the reversed version of dataSet1
                 dataSet2 = dataSet1Reversed;
             }
-            else if (startingOrder == "Fairly sorted")
+            else if (startingOrder == "Partially sorted")
             {
                 // define leftIndex and rightIndex as the first elements to be swapped
                 int leftIndex = 1;

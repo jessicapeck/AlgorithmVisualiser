@@ -123,9 +123,9 @@ namespace Prototype.Views
             {
                 startingOrder = reversed_radioButton.Text;
             }
-            else if (fairly_sorted_radioButton.Checked == true)
+            else if (partially_sorted_radioButton.Checked == true)
             {
-                startingOrder = fairly_sorted_radioButton.Text;
+                startingOrder = partially_sorted_radioButton.Text;
             }
 
             // get checked option from data values list
@@ -248,6 +248,8 @@ namespace Prototype.Views
 
             // set stopAnimations to false
             stopAnimations = false;
+
+            UpdateComparisonSwapCounters(0, 0, 0, 0);
         }
 
         public async Task UpdateUI(List<int> data1, List<int> data2, int comparisonNum1, int swapNum1, int comparisonNum2, int swapNum2, List<(int, int)> specialColours1, List<(int, int)> specialColours2)
