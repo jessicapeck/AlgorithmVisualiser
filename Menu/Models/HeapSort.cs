@@ -11,26 +11,31 @@ namespace Prototype.Models
         // define firstPass as true
         private bool firstPass = true;
 
-        // attributes for use in if (firstPass)
+        // definition in firstPass
         private int numberOfNodes;
-        private int lastNonLeafNodeIndex;
         private int nodeIndex;
-        private bool buildHeap;
-        private bool extractElements;
-        private bool swapStepForHeapify;
-        private bool swapStepForExtractElements;
 
-        // attributes use in heapify
-        private int largestNodeIndex;
-        private int leftBranchIndex;
-        private int rightBranchIndex;
-        private List<int> branchIndexes = new List<int> { };
-        private List<int> branchAndLargestIndexes = new List<int> { };
+        // declare index of parent node
+        private int parentNodeIndex;
 
-        // attributes for if (swapStep)
+        private int j;
+
+        // for use in swapStep
         private int temp;
+        private int a;
+        private int b;
+
+        // bools for different sections of heap sort
+        private bool buildMaxHeapForLoop = true;
+        private bool buildMaxHeapWhileLoop = false;
+        private bool heapSortForLoop = false;
+        private bool heapSortWhileLoop = false;
 
 
+        private int leftChildIndex;
+        private int rightChildIndex;
+        private int endOfList;
+        private int largestChildIndex;
 
         public override List<int> PerformStep()
         {
@@ -38,119 +43,156 @@ namespace Prototype.Models
             if (firstPass)
             {
                 numberOfNodes = data.Count();
-                lastNonLeafNodeIndex = (numberOfNodes / 2) - 2;
 
-                nodeIndex = lastNonLeafNodeIndex;
-
-                buildHeap = true;
-                extractElements = false;
+                nodeIndex = 1;
 
                 firstPass = false;
-
-                swapStepForHeapify = false;
-                swapStepForExtractElements = false;
             }
 
-            if (comparisonStep)
+            // perform a swap of elements with index a and b
+            if (swapStep)
             {
-                if (buildHeap)
+                // SPECIAL COLOURS
+                specialColours.Clear();
+                specialColours.Add((a, 1));
+                specialColours.Add((b, 1));
+
+                temp = data[a];
+                data[a] = data[b];
+                data[b] = temp;
+
+                swapStep = false;
+            }
+            else if (buildMaxHeapForLoop)
+            {
+                // define parentNodeIndex
+                parentNodeIndex = (nodeIndex - 1) / 2;
+
+                // SPECIAL COLOURS
+                specialColours.Clear();
+                specialColours.Add((nodeIndex, 1));
+                specialColours.Add((parentNodeIndex + 1, 1));
+
+                // check if the value of the child node is greater than the value of the parent node
+                if (data[nodeIndex] > data[parentNodeIndex])
                 {
-                    // heapify nodes from  index 0 to lastNonLeafNodeIndex in reverse order
-                    heapify(numberOfNodes, nodeIndex);
+                    // set j to be index of child node
+                    j = nodeIndex;
 
-                    if (largestNodeIndex != nodeIndex)
+                    // move to buildMaxHeapWhileLoop section
+                    buildMaxHeapForLoop = false;
+                    buildMaxHeapWhileLoop = true;
+                }
+                else
+                {
+                    // increment nodeIndex
+                    nodeIndex++;
+
+                    // if nodeIndex exceeds size of data set, move to heapSortForLoop section
+                    if (nodeIndex == numberOfNodes)
                     {
-                        comparisonStep = false;
-                        swapStepForHeapify = true;                        
-                    }
-                    else
-                    {
-                        nodeIndex--;
+                        buildMaxHeapForLoop = false;
+                        heapSortForLoop = true;
 
-                        if (nodeIndex < 0)
-                        {
-                            buildHeap = false;
-                            extractElements = true;
-
-                            nodeIndex = numberOfNodes - 1;
-
-                        }
+                        nodeIndex = numberOfNodes - 1;
                     }
                 }
-                // remove largest and heapify
-                else if (extractElements)
+            }
+            else if (buildMaxHeapWhileLoop)
+            {
+                // SPECIAL COLOURS
+                specialColours.Clear();
+                specialColours.Add((j, 1));
+                specialColours.Add((parentNodeIndex, 1));
+
+                // swap child and parent node until parent is larger
+                parentNodeIndex = (j - 1) / 2;
+                if (data[j] > data[parentNodeIndex])
                 {
-                    heapify(nodeIndex, 0);
+                    a = j;
+                    b = parentNodeIndex;
 
-                    if (largestNodeIndex != nodeIndex)
-                    {
-                        comparisonStep = false;
-                        swapStepForHeapify = true;
-                    }
-                    else
-                    {
-                        nodeIndex--;
+                    swapStep = true;
 
-                        if (nodeIndex == 0)
-                        {
-                            sorted = true;
-                        }
+                    // j point to parent node position after swap
+                    j = parentNodeIndex;
+
+                    // if the parent node is at the root, return to buildMaxHeapForLoop section
+                    if (j == 0)
+                    {
+                        buildMaxHeapWhileLoop = false;
+                        buildMaxHeapForLoop = true;
                     }
                 }
-
+                else
+                {
+                    buildMaxHeapWhileLoop = false;
+                    buildMaxHeapForLoop = true;
+                }
             }
-            // swaps
-            else if (swapStepForHeapify)
+            else if (heapSortForLoop)
             {
-                temp = data[nodeIndex];
-                data[nodeIndex] = data[largestNodeIndex];
-                data[largestNodeIndex] = temp;
+                // SPECIAL COLOURS
+                specialColours.Clear();
+                specialColours.Add((nodeIndex, 1));
+                specialColours.Add((0, 1));
 
-                nodeIndex = largestNodeIndex;
+                if (nodeIndex > 0)
+                {
+                    // swap the largest element to the end
+                    a = 0;
+                    b = nodeIndex;
 
-                swapStepForHeapify = false;
-                comparisonStep = true;
+                    swapStep = true;
+
+                    j = 0;
+
+                    heapSortForLoop = false;
+                    heapSortWhileLoop = true;
+                }
+                else
+                {
+                    sorted = true;
+                }
             }
-            else if (swapStepForExtractElements)
+            else if (heapSortWhileLoop)
             {
-                temp = data[0];
-                data[0] = data[nodeIndex];
-                data[nodeIndex] = temp;
+                // SPECIAL COLOURS
+                specialColours.Clear();
+                specialColours.Add((leftChildIndex, 1));
+                specialColours.Add((rightChildIndex, 1));
 
-                swapStepForExtractElements = false;
-                comparisonStep = true;
+                leftChildIndex = (2 * j) + 1;
+                rightChildIndex = leftChildIndex + 1;
+                endOfList = nodeIndex - 1;
+
+                largestChildIndex = leftChildIndex;
+
+                // identify whether left child or right child value is largest
+                if ((leftChildIndex < (endOfList)) && data[leftChildIndex] < data[rightChildIndex])
+                {
+                    largestChildIndex = rightChildIndex;
+                }
+                if ((largestChildIndex < nodeIndex) && (data[j] < data[largestChildIndex]))
+                {
+                    a = j;
+                    b = largestChildIndex;
+                    swapStep = true;
+
+                j = largestChildIndex;
+
+                if (largestChildIndex >= nodeIndex)
+                {
+                    nodeIndex--;
+
+                    heapSortWhileLoop = false;
+                    heapSortForLoop = true;
+                }
+                }
             }
             
             
             return data;
-        }
-
-        private void heapify(int N, int i)
-        {
-            // initialise largest as root
-            largestNodeIndex = i;
-
-            // initialise leftBranchIndex and rightBranchIndex
-            leftBranchIndex = (2 * i) + 1;
-            rightBranchIndex = (2 * i) + 2;
-
-            branchIndexes.Add(leftBranchIndex);
-            branchIndexes.Add(rightBranchIndex);
-
-            // add indexes to branchAndLargestIndexes if the branchIndex is valid
-            branchAndLargestIndexes.Add(largestNodeIndex);
-            foreach (int branchIndex in branchIndexes)
-            {
-                // if index does not exceed end of list
-                if (branchIndex < N)
-                {
-                    branchAndLargestIndexes.Add(branchIndex);
-                }
-            }
-
-            // assign the new largestNodeIndex
-            largestNodeIndex = branchAndLargestIndexes.Max();
-
         }
     }
 }
