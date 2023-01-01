@@ -31,6 +31,8 @@ namespace Prototype.Models
         private bool heapSortForLoop = false;
         private bool heapSortWhileLoop = false;
 
+        private bool stepComplete = false;
+
 
         private int leftChildIndex;
         private int rightChildIndex;
@@ -52,7 +54,7 @@ namespace Prototype.Models
             // perform a swap of elements with index a and b
             if (swapStep)
             {
-                // SPECIAL COLOURS
+                // set special colours for elements being swapped
                 specialColours.Clear();
                 specialColours.Add((a, 1));
                 specialColours.Add((b, 1));
@@ -61,6 +63,9 @@ namespace Prototype.Models
                 data[a] = data[b];
                 data[b] = temp;
 
+                // increment swap counter
+                numberOfSwaps++;
+
                 swapStep = false;
             }
             else if (buildMaxHeapForLoop)
@@ -68,10 +73,13 @@ namespace Prototype.Models
                 // define parentNodeIndex
                 parentNodeIndex = (nodeIndex - 1) / 2;
 
-                // SPECIAL COLOURS
+                // set special colours for elements being compared
                 specialColours.Clear();
                 specialColours.Add((nodeIndex, 1));
-                specialColours.Add((parentNodeIndex + 1, 1));
+                specialColours.Add((parentNodeIndex, 1));
+
+                // increment comparison counter
+                numberOfComparisons++;
 
                 // check if the value of the child node is greater than the value of the parent node
                 if (data[nodeIndex] > data[parentNodeIndex])
@@ -100,10 +108,13 @@ namespace Prototype.Models
             }
             else if (buildMaxHeapWhileLoop)
             {
-                // SPECIAL COLOURS
+                // set special colours for elements being compared
                 specialColours.Clear();
                 specialColours.Add((j, 1));
                 specialColours.Add((parentNodeIndex, 1));
+
+                // increment comparison counter
+                numberOfComparisons++;
 
                 // swap child and parent node until parent is larger
                 parentNodeIndex = (j - 1) / 2;
@@ -132,11 +143,6 @@ namespace Prototype.Models
             }
             else if (heapSortForLoop)
             {
-                // SPECIAL COLOURS
-                specialColours.Clear();
-                specialColours.Add((nodeIndex, 1));
-                specialColours.Add((0, 1));
-
                 if (nodeIndex > 0)
                 {
                     // swap the largest element to the end
@@ -155,42 +161,73 @@ namespace Prototype.Models
                     sorted = true;
                 }
             }
-            else if (heapSortWhileLoop)
+
+            if (stepComplete)
             {
-                // SPECIAL COLOURS
-                specialColours.Clear();
-                specialColours.Add((leftChildIndex, 1));
-                specialColours.Add((rightChildIndex, 1));
-
-                leftChildIndex = (2 * j) + 1;
-                rightChildIndex = leftChildIndex + 1;
-                endOfList = nodeIndex - 1;
-
-                largestChildIndex = leftChildIndex;
-
-                // identify whether left child or right child value is largest
-                if ((leftChildIndex < (endOfList)) && data[leftChildIndex] < data[rightChildIndex])
+                stepComplete = false;
+            }
+            else
+            {
+                if ((heapSortWhileLoop) && (swapStep))
                 {
-                    largestChildIndex = rightChildIndex;
+                    // set special colours for elements being swapped
+                    specialColours.Clear();
+                    specialColours.Add((a, 1));
+                    specialColours.Add((b, 1));
+
+                    temp = data[a];
+                    data[a] = data[b];
+                    data[b] = temp;
+
+                    // increment swap counter
+                    numberOfSwaps++;
+
+                    swapStep = false;
                 }
-                if ((largestChildIndex < nodeIndex) && (data[j] < data[largestChildIndex]))
+                else if (heapSortWhileLoop && (!swapStep))
                 {
-                    a = j;
-                    b = largestChildIndex;
-                    swapStep = true;
+                    // set special colours for elements being compared
+                    specialColours.Clear();
+                    specialColours.Add((leftChildIndex, 1));
+                    specialColours.Add((rightChildIndex, 1));
+                    specialColours.Add((j, 1));
 
-                j = largestChildIndex;
+                    // increment comparison counter
+                    numberOfComparisons++;
 
-                if (largestChildIndex >= nodeIndex)
-                {
-                    nodeIndex--;
+                    leftChildIndex = (2 * j) + 1;
+                    rightChildIndex = leftChildIndex + 1;
+                    endOfList = nodeIndex - 1;
 
-                    heapSortWhileLoop = false;
-                    heapSortForLoop = true;
-                }
+                    largestChildIndex = leftChildIndex;
+
+                    // identify whether left child or right child value is largest
+                    if ((leftChildIndex < (endOfList)) && data[leftChildIndex] < data[rightChildIndex])
+                    {
+                        largestChildIndex = rightChildIndex;
+                    }
+                    if ((largestChildIndex < nodeIndex) && (data[j] < data[largestChildIndex]))
+                    {
+                        a = j;
+                        b = largestChildIndex;
+                        swapStep = true;
+
+                        // set stepComplete to true so that two steps aren't performed on next call of PerformStep()
+                        stepComplete = true;
+                    }
+
+                    j = largestChildIndex;
+
+                    if (largestChildIndex >= nodeIndex)
+                    {
+                        nodeIndex--;
+
+                        heapSortWhileLoop = false;
+                        heapSortForLoop = true;
+                    }
                 }
             }
-            
+                        
             
             return data;
         }
