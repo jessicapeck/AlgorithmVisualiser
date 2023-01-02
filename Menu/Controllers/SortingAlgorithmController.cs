@@ -38,7 +38,7 @@ namespace Prototype.Controllers
             }
             else if (choice == "Merge Sort")
             {
-                // TODO : FURTHER DEVELOPMENT
+                tempAlgorithm = new MergeSort();
             }
             else if (choice == "Heap Sort")
             {
