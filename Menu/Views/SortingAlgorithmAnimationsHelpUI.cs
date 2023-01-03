@@ -14,24 +14,30 @@ namespace Prototype.Views
 {
     public partial class SortingAlgorithmAnimationsHelpUI : Form
     {
-        string text;
+        
 
         public SortingAlgorithmAnimationsHelpUI()
         {
             InitializeComponent();
+        }
 
-            // load help text from an embedded resource
+        private void SortingAlgorithmAnimationsHelpUI_Load(object sender, EventArgs e)
+        {
+            string htmlContent;
+
+            //// load help text from an embedded resource
             var assembly = Assembly.GetExecutingAssembly();
-            var resourceName = "Prototype.Views.HelpText.SortingAlgorithmAnimationsHelpText.txt";
+            var resourceName = "Prototype.Views.HelpText.sortingalgorithmanimationshelptext.html";
 
             using (Stream stream = assembly.GetManifestResourceStream(resourceName))
             using (StreamReader reader = new StreamReader(stream))
             {
-                text = reader.ReadToEnd();
+                htmlContent = reader.ReadToEnd();
             }
 
             // set label text to be the help text
-            help_text_label.Text = text;
+            webBrowser1.DocumentText = htmlContent;
+
         }
     }
 }

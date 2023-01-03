@@ -128,8 +128,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\HelpText\help.html" />
-    <EmbeddedResource Include="Views\HelpText\SortingAlgorithmAnimationsHelpText.txt" />
+    <EmbeddedResource Include="Views\HelpText\sortingalgorithmanimationshelptext.html" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

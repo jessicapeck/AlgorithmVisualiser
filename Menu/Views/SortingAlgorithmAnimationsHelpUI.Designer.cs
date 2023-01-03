@@ -29,18 +29,8 @@ namespace Prototype.Views
         /// </summary>
         private void InitializeComponent()
         {
-            this.help_text_label = new System.Windows.Forms.Label();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.SuspendLayout();
-            // 
-            // help_text_label
-            // 
-            this.help_text_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.help_text_label.Location = new System.Drawing.Point(0, 0);
-            this.help_text_label.Name = "help_text_label";
-            this.help_text_label.Size = new System.Drawing.Size(647, 1027);
-            this.help_text_label.TabIndex = 0;
-            this.help_text_label.Text = "label1";
             // 
             // webBrowser1
             // 
@@ -49,8 +39,7 @@ namespace Prototype.Views
             this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser1.Name = "webBrowser1";
             this.webBrowser1.Size = new System.Drawing.Size(647, 1027);
-            this.webBrowser1.TabIndex = 1;
-            this.webBrowser1.Visible = false;
+            this.webBrowser1.TabIndex = 0;
             // 
             // SortingAlgorithmAnimationsHelpUI
             // 
@@ -58,18 +47,17 @@ namespace Prototype.Views
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(647, 1027);
             this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.help_text_label);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "SortingAlgorithmAnimationsHelpUI";
             this.Text = "SortingAlgorithmAnimationsHelp";
+            this.Load += new System.EventHandler(this.SortingAlgorithmAnimationsHelpUI_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label help_text_label;
         private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

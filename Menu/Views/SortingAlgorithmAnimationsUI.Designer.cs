@@ -168,6 +168,7 @@ namespace Prototype.Views
             this.shortest_path_button.TabIndex = 3;
             this.shortest_path_button.Text = "Shortest Path Algorithm";
             this.shortest_path_button.UseVisualStyleBackColor = false;
+            this.shortest_path_button.Click += new System.EventHandler(this.shortest_path_button_Click);
             // 
             // pause_button
             // 
