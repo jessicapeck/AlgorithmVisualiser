@@ -74,6 +74,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\SortingAlgorithmAnimationsHelpUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SortingAlgorithmAnimationsHelpUI.Designer.cs">
+      <DependentUpon>SortingAlgorithmAnimationsHelpUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SortingAlgorithmAnimationsUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\SortingAlgorithmAnimationsHelpUI.resx">
+      <DependentUpon>SortingAlgorithmAnimationsHelpUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SortingAlgorithmAnimationsUI.resx">
       <DependentUpon>SortingAlgorithmAnimationsUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -115,6 +124,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Views\HelpText\SortingAlgorithmAnimationsHelpText.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

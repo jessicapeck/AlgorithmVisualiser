@@ -49,6 +49,8 @@ namespace Prototype.Views
         // to determine if picture box needs to be cleared
         private bool stopAnimations = false;
 
+        private Form helpForm;
+
 
         public SortingAlgorithmAnimationsUI()
         {
@@ -149,6 +151,18 @@ namespace Prototype.Views
 
             return (firstSortingAlgorithm, secondSortingAlgorithm);
 
+        }
+
+        // open help form
+        private void help_button_Click(object sender, EventArgs e)
+        {
+            if ((helpForm == null) || (helpForm.IsDisposed))
+            {
+                // open help form with instructions on how to use feature
+                helpForm = new SortingAlgorithmAnimationsHelpUI();
+            }
+
+            helpForm.Show();
         }
 
         private void start_button_Click(object sender, EventArgs e)
@@ -400,6 +414,5 @@ namespace Prototype.Views
         {
 
         }
-
     }
 }

@@ -60,6 +60,7 @@ namespace Prototype.Views
             this.algorithm1_num_swaps_label = new System.Windows.Forms.Label();
             this.algorithm2_num_comparisons_label = new System.Windows.Forms.Label();
             this.algorithm2_num_swaps_label = new System.Windows.Forms.Label();
+            this.help_button = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
@@ -442,6 +443,17 @@ namespace Prototype.Views
             this.algorithm2_num_swaps_label.TabIndex = 11;
             this.algorithm2_num_swaps_label.Text = "Number of swaps :";
             // 
+            // help_button
+            // 
+            this.help_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.help_button.Location = new System.Drawing.Point(1168, 828);
+            this.help_button.Name = "help_button";
+            this.help_button.Size = new System.Drawing.Size(54, 50);
+            this.help_button.TabIndex = 18;
+            this.help_button.Text = "?";
+            this.help_button.UseVisualStyleBackColor = true;
+            this.help_button.Click += new System.EventHandler(this.help_button_Click);
+            // 
             // SortingAlgorithmAnimationsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -449,6 +461,7 @@ namespace Prototype.Views
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.Azure;
             this.ClientSize = new System.Drawing.Size(1234, 890);
+            this.Controls.Add(this.help_button);
             this.Controls.Add(this.algorithm2_num_swaps_label);
             this.Controls.Add(this.algorithm2_num_comparisons_label);
             this.Controls.Add(this.algorithm1_num_swaps_label);
@@ -520,5 +533,6 @@ namespace Prototype.Views
         private System.Windows.Forms.RadioButton few_unique_radioButton;
         private System.Windows.Forms.RadioButton all_different_radioButton;
         private System.Windows.Forms.Label number_of_elements_counter_label;
+        private System.Windows.Forms.Button help_button;
     }
 }
