@@ -77,6 +77,7 @@ namespace Prototype.Models
             // if the start point would exceed the end of the list, then the list is sorted
             else
             {
+                specialColours.Clear();
                 sorted = true;
             }
 

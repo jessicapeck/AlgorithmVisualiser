@@ -101,6 +101,7 @@ namespace Prototype.Models
                 {
                     if (counter <= 0)
                     {
+                        specialColours.Clear();
                         sorted = true;
                     }
                     else

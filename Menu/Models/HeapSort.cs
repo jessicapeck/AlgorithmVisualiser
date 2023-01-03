@@ -158,6 +158,7 @@ namespace Prototype.Models
                 }
                 else
                 {
+                    specialColours.Clear();
                     sorted = true;
                 }
             }

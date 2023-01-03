@@ -81,12 +81,14 @@ namespace Prototype.Models
                 // check if the algorithm has reached the end of the final useful pass
                 if (passNum == data.Count())
                 {
+                    specialColours.Clear();
                     sorted = true;
                 }
             }
             // if end of pass and no swaps have been made in the pass, the data set is sorted
             else if (((counter >= data.Count() - passNum)) && (swapped == false))
             {
+                specialColours.Clear();
                 sorted = true;
             }            
 

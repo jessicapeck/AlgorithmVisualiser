@@ -94,6 +94,8 @@ namespace Prototype.Models
                     }
                     else
                     {
+                        specialColours.Clear();
+
                         // change boolean state of sorted attribute
                         sorted = true;
                     }                  
