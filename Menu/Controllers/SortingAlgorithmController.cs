@@ -42,7 +42,7 @@ namespace Prototype.Controllers
             }
             else if (choice == "Heap Sort")
             {
-                // TODO : FURTHER DEVELOPMENT
+                tempAlgorithm = new HeapSort();
             }
 
             // return tempAlgorithm
