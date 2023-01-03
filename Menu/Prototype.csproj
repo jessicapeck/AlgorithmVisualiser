@@ -105,6 +105,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Views\ShortestPathAlgorithmsUI.resx">
+      <DependentUpon>ShortestPathAlgorithmsUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SortingAlgorithmAnimationsHelpUI.resx">
       <DependentUpon>SortingAlgorithmAnimationsHelpUI.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,7 +128,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\HelpText\SortingAlgorithmAnimationsHelpText.txt" />
+    <Content Include="Views\HelpText\help.html" />
+    <EmbeddedResource Include="Views\HelpText\SortingAlgorithmAnimationsHelpText.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
