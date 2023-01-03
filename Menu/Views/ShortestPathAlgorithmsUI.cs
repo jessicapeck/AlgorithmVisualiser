@@ -10,11 +10,39 @@ using System.Windows.Forms;
 
 namespace Prototype
 {
-    public partial class ShortestPathAlgorithms : Form
+    public partial class ShortestPathAlgorithmsUI : Form
     {
-        public ShortestPathAlgorithms()
+        public ShortestPathAlgorithmsUI()
         {
             InitializeComponent();
+
+            UISetup();
+        }
+
+        // setup for initial form UI
+        private void UISetup()
+        {
+            // set colour for current feature button
+            shortest_path_button.BackColor = Color.Orange;
+            shortest_path_button.ForeColor = Color.Black;
+            shortest_path_button.Enabled = false;
+        }
+
+
+        // feature buttons
+        private void sorting_algorithms_button_Click(object sender, EventArgs e)
+        {
+            // TODO
+        }
+
+        private void interactive_algorithms_button_Click(object sender, EventArgs e)
+        {
+            // TODO
+        }
+
+        private void facts_information_button_Click(object sender, EventArgs e)
+        {
+            // TODO
         }
     }
 }

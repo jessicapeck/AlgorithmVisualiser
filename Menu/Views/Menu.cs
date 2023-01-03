@@ -34,8 +34,7 @@ namespace Prototype
             algorithm_information_button.Enabled = true;
             algorithm_information_button.Visible = true;
 
-            need_help_button.Enabled = true;
-            need_help_button.Visible = true;
+
 
         }
 
