@@ -34,8 +34,6 @@ namespace Prototype
             algorithm_information_button.Enabled = true;
             algorithm_information_button.Visible = true;
 
-
-
         }
 
         private void sorting_algorithm_animations_button_Click(object sender, EventArgs e)
@@ -44,25 +42,6 @@ namespace Prototype
             //cheese.Show();
         }
 
-        private void shortest_path_algorithms_button_Click(object sender, EventArgs e)
-        {
-            // TODO open interactive algorithms form
-        }
-
-        private void interactive_algorithms_button_Click(object sender, EventArgs e)
-        {
-            // TODO open interactive algorithms form
-        }
-
-        private void algorithm_information_button_Click(object sender, EventArgs e)
-        {
-            // TODO open algorithm information form
-        }
-
-        private void need_help_button_Click(object sender, EventArgs e)
-        {
-            // TODO add help button call
-        }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
