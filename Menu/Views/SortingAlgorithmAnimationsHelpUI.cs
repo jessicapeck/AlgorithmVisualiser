@@ -36,7 +36,7 @@ namespace Prototype.Views
             }
 
             // set label text to be the help text
-            webBrowser1.DocumentText = htmlContent;
+            help_text_webBrowser.DocumentText = htmlContent;
 
         }
     }
