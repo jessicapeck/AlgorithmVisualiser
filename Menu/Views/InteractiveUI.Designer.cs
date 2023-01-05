@@ -116,6 +116,7 @@ namespace Prototype
             this.bubble_sort_button.TabIndex = 16;
             this.bubble_sort_button.Text = "Bubble Sort";
             this.bubble_sort_button.UseVisualStyleBackColor = false;
+            this.bubble_sort_button.Click += new System.EventHandler(this.bubble_sort_button_Click);
             // 
             // InteractiveUI
             // 

@@ -7,11 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Prototype.Controllers;
 
 namespace Prototype
 {
     public partial class InteractiveUI : Form
     {
+        // controller
+        private InteractiveController controller;
+
         public InteractiveUI()
         {
             InitializeComponent();
@@ -25,13 +29,16 @@ namespace Prototype
 
             // make question label not visible
             question_label.Visible = false;
+
+            // create controller
+            controller = new InteractiveController();
         }
 
-        private void mock_sorting_algorithm_button_Click(object sender, EventArgs e)
+        private void bubble_sort_button_Click(object sender, EventArgs e)
         {
-            // disable mock sorting algorithm button
-            //mock_sorting_algorithm_button.Enabled = false;
-            //mock_sorting_algorithm_button.BackColor = Color.Gray;
+            // disable sorting algorithm buttons
+            bubble_sort_button.Enabled = false;
+            bubble_sort_button.BackColor = Color.Gray;
 
             // enable end test button
             end_test_button.Enabled = true;
@@ -39,13 +46,16 @@ namespace Prototype
 
             // make question visible
             question_label.Visible = true;
+
+            // send algorithm choice to controller
+            controller.SetUpAlgorithmChoices("Bubble Sort");
         }
 
         private void end_test_button_Click(object sender, EventArgs e)
         {
             // enable mock sorting algorithm button
-            //mock_sorting_algorithm_button.Enabled = true;
-            //mock_sorting_algorithm_button.BackColor = Color.WhiteSmoke;
+            bubble_sort_button.Enabled = true;
+            bubble_sort_button.BackColor = Color.LightSkyBlue;
 
             // disable end test button
             end_test_button.Enabled = false;
@@ -54,5 +64,7 @@ namespace Prototype
             // make question label not visible
             question_label.Visible = false;
         }
+
+        
     }
 }
