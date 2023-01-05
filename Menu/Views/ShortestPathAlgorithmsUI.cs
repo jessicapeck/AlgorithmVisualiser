@@ -22,10 +22,7 @@ namespace Prototype
         // setup for initial form UI
         private void UISetup()
         {
-            // set colour for current feature button
-            shortest_path_button.BackColor = Color.Orange;
-            shortest_path_button.ForeColor = Color.Black;
-            shortest_path_button.Enabled = false;
+
         }
 
 

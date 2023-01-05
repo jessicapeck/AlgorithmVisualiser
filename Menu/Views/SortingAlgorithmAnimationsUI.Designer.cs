@@ -33,10 +33,6 @@ namespace Prototype.Views
             this.first_algorithm_pictureBox = new System.Windows.Forms.PictureBox();
             this.start_button = new System.Windows.Forms.Button();
             this.speed_trackBar = new System.Windows.Forms.TrackBar();
-            this.sorting_algorithms_button = new System.Windows.Forms.Button();
-            this.interactive_algorithms_button = new System.Windows.Forms.Button();
-            this.facts_information_button = new System.Windows.Forms.Button();
-            this.shortest_path_button = new System.Windows.Forms.Button();
             this.pause_button = new System.Windows.Forms.Button();
             this.play_button = new System.Windows.Forms.Button();
             this.stop_button = new System.Windows.Forms.Button();
@@ -61,9 +57,11 @@ namespace Prototype.Views
             this.algorithm2_num_comparisons_label = new System.Windows.Forms.Label();
             this.algorithm2_num_swaps_label = new System.Windows.Forms.Label();
             this.help_button = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
+            this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.data_values_groupBox.SuspendLayout();
             this.starting_order_groupBox.SuspendLayout();
@@ -114,62 +112,6 @@ namespace Prototype.Views
             this.speed_trackBar.TabIndex = 3;
             this.speed_trackBar.Value = 300;
             // 
-            // sorting_algorithms_button
-            // 
-            this.sorting_algorithms_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.sorting_algorithms_button.AutoSize = true;
-            this.sorting_algorithms_button.BackColor = System.Drawing.Color.RoyalBlue;
-            this.sorting_algorithms_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sorting_algorithms_button.ForeColor = System.Drawing.Color.White;
-            this.sorting_algorithms_button.Location = new System.Drawing.Point(23, 12);
-            this.sorting_algorithms_button.Name = "sorting_algorithms_button";
-            this.sorting_algorithms_button.Size = new System.Drawing.Size(361, 41);
-            this.sorting_algorithms_button.TabIndex = 0;
-            this.sorting_algorithms_button.Text = "Sorting Algorithm Animations";
-            this.sorting_algorithms_button.UseVisualStyleBackColor = false;
-            // 
-            // interactive_algorithms_button
-            // 
-            this.interactive_algorithms_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.interactive_algorithms_button.BackColor = System.Drawing.Color.RoyalBlue;
-            this.interactive_algorithms_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interactive_algorithms_button.ForeColor = System.Drawing.Color.White;
-            this.interactive_algorithms_button.Location = new System.Drawing.Point(390, 12);
-            this.interactive_algorithms_button.Name = "interactive_algorithms_button";
-            this.interactive_algorithms_button.Size = new System.Drawing.Size(193, 41);
-            this.interactive_algorithms_button.TabIndex = 1;
-            this.interactive_algorithms_button.Text = "InteractiveUI";
-            this.interactive_algorithms_button.UseVisualStyleBackColor = false;
-            this.interactive_algorithms_button.Click += new System.EventHandler(this.interactive_algorithms_button_Click);
-            // 
-            // facts_information_button
-            // 
-            this.facts_information_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.facts_information_button.BackColor = System.Drawing.Color.RoyalBlue;
-            this.facts_information_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.facts_information_button.ForeColor = System.Drawing.Color.White;
-            this.facts_information_button.Location = new System.Drawing.Point(589, 12);
-            this.facts_information_button.Name = "facts_information_button";
-            this.facts_information_button.Size = new System.Drawing.Size(310, 41);
-            this.facts_information_button.TabIndex = 2;
-            this.facts_information_button.Text = "Facts and Information";
-            this.facts_information_button.UseVisualStyleBackColor = false;
-            this.facts_information_button.Click += new System.EventHandler(this.facts_information_button_Click);
-            // 
-            // shortest_path_button
-            // 
-            this.shortest_path_button.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.shortest_path_button.BackColor = System.Drawing.Color.RoyalBlue;
-            this.shortest_path_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shortest_path_button.ForeColor = System.Drawing.Color.White;
-            this.shortest_path_button.Location = new System.Drawing.Point(905, 12);
-            this.shortest_path_button.Name = "shortest_path_button";
-            this.shortest_path_button.Size = new System.Drawing.Size(306, 41);
-            this.shortest_path_button.TabIndex = 3;
-            this.shortest_path_button.Text = "Shortest Path Algorithm";
-            this.shortest_path_button.UseVisualStyleBackColor = false;
-            this.shortest_path_button.Click += new System.EventHandler(this.shortest_path_button_Click);
-            // 
             // pause_button
             // 
             this.pause_button.BackColor = System.Drawing.Color.CornflowerBlue;
@@ -211,6 +153,7 @@ namespace Prototype.Views
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.panel1.AutoSize = true;
             this.panel1.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panel1.Controls.Add(this.label1);
             this.panel1.Enabled = false;
             this.panel1.Location = new System.Drawing.Point(14, -6);
             this.panel1.Name = "panel1";
@@ -455,6 +398,16 @@ namespace Prototype.Views
             this.help_button.UseVisualStyleBackColor = true;
             this.help_button.Click += new System.EventHandler(this.help_button_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(306, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(669, 55);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Sorting Algorithm Animations";
+            // 
             // SortingAlgorithmAnimationsUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -472,10 +425,6 @@ namespace Prototype.Views
             this.Controls.Add(this.stop_button);
             this.Controls.Add(this.play_button);
             this.Controls.Add(this.pause_button);
-            this.Controls.Add(this.shortest_path_button);
-            this.Controls.Add(this.facts_information_button);
-            this.Controls.Add(this.interactive_algorithms_button);
-            this.Controls.Add(this.sorting_algorithms_button);
             this.Controls.Add(this.start_button);
             this.Controls.Add(this.first_algorithm_pictureBox);
             this.Controls.Add(this.second_algorithm_pictureBox);
@@ -489,6 +438,8 @@ namespace Prototype.Views
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.data_values_groupBox.ResumeLayout(false);
@@ -507,10 +458,6 @@ namespace Prototype.Views
         private System.Windows.Forms.PictureBox first_algorithm_pictureBox;
         private System.Windows.Forms.Button start_button;
         private System.Windows.Forms.TrackBar speed_trackBar;
-        private System.Windows.Forms.Button sorting_algorithms_button;
-        private System.Windows.Forms.Button interactive_algorithms_button;
-        private System.Windows.Forms.Button facts_information_button;
-        private System.Windows.Forms.Button shortest_path_button;
         private System.Windows.Forms.Button pause_button;
         private System.Windows.Forms.Button play_button;
         private System.Windows.Forms.Button stop_button;
@@ -535,5 +482,6 @@ namespace Prototype.Views
         private System.Windows.Forms.RadioButton all_different_radioButton;
         private System.Windows.Forms.Label number_of_elements_counter_label;
         private System.Windows.Forms.Button help_button;
+        private System.Windows.Forms.Label label1;
     }
 }

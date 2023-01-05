@@ -92,6 +92,12 @@
     <Compile Include="Views\ShortestPathAlgorithmsUI.Designer.cs">
       <DependentUpon>ShortestPathAlgorithmsUI.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\AlgorithmInformationUI.resx">
+      <DependentUpon>AlgorithmInformationUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InteractiveUI.resx">
+      <DependentUpon>InteractiveUI.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Menu.resx">
       <DependentUpon>Menu.cs</DependentUpon>
     </EmbeddedResource>

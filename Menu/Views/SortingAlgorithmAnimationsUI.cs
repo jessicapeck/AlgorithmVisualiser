@@ -62,10 +62,6 @@ namespace Prototype.Views
         // setup for initial form UI
         private void UISetup()
         {
-            // set colour for current feature button
-            sorting_algorithms_button.BackColor = Color.Orange;
-            sorting_algorithms_button.ForeColor = Color.Black;
-            sorting_algorithms_button.Enabled = false;
 
             // set default values for radio buttons
             random_radioButton.Checked = true;
