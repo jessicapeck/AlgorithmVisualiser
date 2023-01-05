@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Prototype
 {
-    public partial class Interactive : Form
+    public partial class InteractiveUI : Form
     {
-        public Interactive()
+        public InteractiveUI()
         {
             InitializeComponent();
         }

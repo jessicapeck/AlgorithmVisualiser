@@ -138,7 +138,7 @@ namespace Prototype.Views
             this.interactive_algorithms_button.Name = "interactive_algorithms_button";
             this.interactive_algorithms_button.Size = new System.Drawing.Size(193, 41);
             this.interactive_algorithms_button.TabIndex = 1;
-            this.interactive_algorithms_button.Text = "Interactive";
+            this.interactive_algorithms_button.Text = "InteractiveUI";
             this.interactive_algorithms_button.UseVisualStyleBackColor = false;
             this.interactive_algorithms_button.Click += new System.EventHandler(this.interactive_algorithms_button_Click);
             // 

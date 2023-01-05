@@ -71,6 +71,7 @@ namespace Prototype
             this.algorithm_information_button.TabIndex = 3;
             this.algorithm_information_button.Text = "Facts and Information";
             this.algorithm_information_button.UseVisualStyleBackColor = false;
+            this.algorithm_information_button.Click += new System.EventHandler(this.algorithm_information_button_Click);
             // 
             // interactive_algorithms_button
             // 
@@ -82,8 +83,9 @@ namespace Prototype
             this.interactive_algorithms_button.Name = "interactive_algorithms_button";
             this.interactive_algorithms_button.Size = new System.Drawing.Size(319, 63);
             this.interactive_algorithms_button.TabIndex = 2;
-            this.interactive_algorithms_button.Text = "Interactive Sorting Algorithms";
+            this.interactive_algorithms_button.Text = "InteractiveUI Sorting Algorithms";
             this.interactive_algorithms_button.UseVisualStyleBackColor = false;
+            this.interactive_algorithms_button.Click += new System.EventHandler(this.interactive_algorithms_button_Click);
             // 
             // shortest_path_algorithms_button
             // 
@@ -97,6 +99,7 @@ namespace Prototype
             this.shortest_path_algorithms_button.TabIndex = 4;
             this.shortest_path_algorithms_button.Text = "Shortest Path Algorithms";
             this.shortest_path_algorithms_button.UseVisualStyleBackColor = false;
+            this.shortest_path_algorithms_button.Click += new System.EventHandler(this.shortest_path_algorithms_button_Click);
             // 
             // panel1
             // 
@@ -164,7 +167,7 @@ namespace Prototype
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(305, 60);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Test your knowledge of sorting algorithms using the \'Interactive Sorting Algorith" +
+            this.label4.Text = "Test your knowledge of sorting algorithms using the \'InteractiveUI Sorting Algorith" +
     "ms\' feature.";
             // 
             // label3

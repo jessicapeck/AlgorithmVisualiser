@@ -1,7 +1,7 @@
 ﻿
 namespace Prototype
 {
-    partial class Interactive
+    partial class InteractiveUI
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,7 @@ namespace Prototype
             this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Interactive";
+            this.Text = "InteractiveUI";
         }
 
         #endregion

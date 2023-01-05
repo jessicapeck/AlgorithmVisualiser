@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Prototype
 {
-    public partial class AlgorithmInformation : Form
+    public partial class AlgorithmInformationUI : Form
     {
-        public AlgorithmInformation()
+        public AlgorithmInformationUI()
         {
             InitializeComponent();
         }

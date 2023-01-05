@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Prototype.Views;
-using Prototype.Controllers;
 
 namespace Prototype
 {
@@ -41,6 +40,11 @@ namespace Prototype
             algorithm_information_button.Visible = true;
         }
 
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void sorting_algorithm_animations_button_Click(object sender, EventArgs e)
         {
             if ((sortingAlgorithmAnimationsForm == null) || (sortingAlgorithmAnimationsForm.IsDisposed))
@@ -52,12 +56,37 @@ namespace Prototype
             sortingAlgorithmAnimationsForm.Show();
         }
 
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        private void interactive_algorithms_button_Click(object sender, EventArgs e)
         {
-            this.Close();
+            if ((interactiveSortingAlgorithmsForm == null) || (interactiveSortingAlgorithmsForm.IsDisposed))
+            {
+                // open sorting algorithm animations form
+                interactiveSortingAlgorithmsForm = new InteractiveUI();
+            }
+
+            interactiveSortingAlgorithmsForm.Show();
         }
 
-        
+        private void algorithm_information_button_Click(object sender, EventArgs e)
+        {
+            if ((factsAndInformationForm == null) || (factsAndInformationForm.IsDisposed))
+            {
+                // open sorting algorithm animations form
+                factsAndInformationForm = new SortingAlgorithmAnimationsUI();
+            }
+
+            factsAndInformationForm.Show();
+        }
+
+        private void shortest_path_algorithms_button_Click(object sender, EventArgs e)
+        {
+            if ((shortestPathAlgorithmsForm == null) || (shortestPathAlgorithmsForm.IsDisposed))
+            {
+                // open sorting algorithm animations form
+                shortestPathAlgorithmsForm = new SortingAlgorithmAnimationsUI();
+            }
+
+            shortestPathAlgorithmsForm.Show();
+        }
     }
 }
