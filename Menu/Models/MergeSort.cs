@@ -41,8 +41,7 @@ namespace Prototype.Models
 
         // for use in swap
         private int temp;
-        private int a;
-        private int b;
+
 
 
         public override List<int> PerformStep()
