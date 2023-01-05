@@ -60,7 +60,7 @@ namespace Prototype
         {
             if ((interactiveSortingAlgorithmsForm == null) || (interactiveSortingAlgorithmsForm.IsDisposed))
             {
-                // open sorting algorithm animations form
+                // open interactive sorting algorithms form
                 interactiveSortingAlgorithmsForm = new InteractiveUI();
             }
 
@@ -71,8 +71,8 @@ namespace Prototype
         {
             if ((factsAndInformationForm == null) || (factsAndInformationForm.IsDisposed))
             {
-                // open sorting algorithm animations form
-                factsAndInformationForm = new SortingAlgorithmAnimationsUI();
+                // open facts and information form
+                factsAndInformationForm = new AlgorithmInformationUI();
             }
 
             factsAndInformationForm.Show();
@@ -82,8 +82,8 @@ namespace Prototype
         {
             if ((shortestPathAlgorithmsForm == null) || (shortestPathAlgorithmsForm.IsDisposed))
             {
-                // open sorting algorithm animations form
-                shortestPathAlgorithmsForm = new SortingAlgorithmAnimationsUI();
+                // open shortest path algorithms form
+                shortestPathAlgorithmsForm = new ShortestPathAlgorithmsUI();
             }
 
             shortestPathAlgorithmsForm.Show();
