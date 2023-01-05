@@ -50,7 +50,7 @@ namespace Prototype
             this.sorting_algorithm_animations_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.sorting_algorithm_animations_button.BackColor = System.Drawing.Color.LightSkyBlue;
             this.sorting_algorithm_animations_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.sorting_algorithm_animations_button.Location = new System.Drawing.Point(17, 121);
+            this.sorting_algorithm_animations_button.Location = new System.Drawing.Point(16, 121);
             this.sorting_algorithm_animations_button.Name = "sorting_algorithm_animations_button";
             this.sorting_algorithm_animations_button.Size = new System.Drawing.Size(279, 63);
             this.sorting_algorithm_animations_button.TabIndex = 1;
@@ -62,7 +62,7 @@ namespace Prototype
             this.algorithm_information_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.algorithm_information_button.BackColor = System.Drawing.Color.LightSkyBlue;
             this.algorithm_information_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.algorithm_information_button.Location = new System.Drawing.Point(17, 291);
+            this.algorithm_information_button.Location = new System.Drawing.Point(16, 291);
             this.algorithm_information_button.Name = "algorithm_information_button";
             this.algorithm_information_button.Size = new System.Drawing.Size(279, 63);
             this.algorithm_information_button.TabIndex = 2;
@@ -74,7 +74,7 @@ namespace Prototype
             this.interactive_algorithms_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.interactive_algorithms_button.BackColor = System.Drawing.Color.LightSkyBlue;
             this.interactive_algorithms_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.interactive_algorithms_button.Location = new System.Drawing.Point(17, 206);
+            this.interactive_algorithms_button.Location = new System.Drawing.Point(16, 206);
             this.interactive_algorithms_button.Name = "interactive_algorithms_button";
             this.interactive_algorithms_button.Size = new System.Drawing.Size(279, 63);
             this.interactive_algorithms_button.TabIndex = 3;
@@ -86,7 +86,7 @@ namespace Prototype
             this.shortest_path_algorithms_button.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.shortest_path_algorithms_button.BackColor = System.Drawing.Color.LightSkyBlue;
             this.shortest_path_algorithms_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shortest_path_algorithms_button.Location = new System.Drawing.Point(17, 376);
+            this.shortest_path_algorithms_button.Location = new System.Drawing.Point(16, 376);
             this.shortest_path_algorithms_button.Name = "shortest_path_algorithms_button";
             this.shortest_path_algorithms_button.Size = new System.Drawing.Size(279, 63);
             this.shortest_path_algorithms_button.TabIndex = 4;
@@ -193,7 +193,7 @@ namespace Prototype
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.Azure;
-            this.ClientSize = new System.Drawing.Size(452, 328);
+            this.ClientSize = new System.Drawing.Size(681, 475);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -201,6 +201,7 @@ namespace Prototype
             this.Controls.Add(this.interactive_algorithms_button);
             this.Controls.Add(this.algorithm_information_button);
             this.Controls.Add(this.sorting_algorithm_animations_button);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MinimizeBox = false;
             this.Name = "Menu";
             this.Text = "Algorithm Visualiser";
