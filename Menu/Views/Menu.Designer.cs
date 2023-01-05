@@ -83,7 +83,7 @@ namespace Prototype
             this.interactive_algorithms_button.Name = "interactive_algorithms_button";
             this.interactive_algorithms_button.Size = new System.Drawing.Size(319, 63);
             this.interactive_algorithms_button.TabIndex = 2;
-            this.interactive_algorithms_button.Text = "InteractiveUI Sorting Algorithms";
+            this.interactive_algorithms_button.Text = "Interactive Sorting Algorithms";
             this.interactive_algorithms_button.UseVisualStyleBackColor = false;
             this.interactive_algorithms_button.Click += new System.EventHandler(this.interactive_algorithms_button_Click);
             // 
@@ -165,10 +165,10 @@ namespace Prototype
             this.label4.Location = new System.Drawing.Point(26, 111);
             this.label4.MaximumSize = new System.Drawing.Size(340, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(305, 60);
+            this.label4.Size = new System.Drawing.Size(313, 60);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Test your knowledge of sorting algorithms using the \'InteractiveUI Sorting Algorith" +
-    "ms\' feature.";
+            this.label4.Text = "Test your knowledge of sorting algorithms using the \'InteractiveUI Sorting Algori" +
+    "thms\' feature.";
             // 
             // label3
             // 
