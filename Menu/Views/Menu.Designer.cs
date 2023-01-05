@@ -162,13 +162,13 @@ namespace Prototype
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.MediumPurple;
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(26, 111);
+            this.label4.Location = new System.Drawing.Point(22, 108);
             this.label4.MaximumSize = new System.Drawing.Size(340, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(313, 60);
+            this.label4.Size = new System.Drawing.Size(305, 60);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Test your knowledge of sorting algorithms using the \'InteractiveUI Sorting Algori" +
-    "thms\' feature.";
+            this.label4.Text = "Test your knowledge of sorting algorithms using the \'Interactive Sorting Algorith" +
+    "ms\' feature.";
             // 
             // label3
             // 
