@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\InteractiveController.cs" />
     <Compile Include="Controllers\SortingAlgorithmController.cs" />
     <Compile Include="Models\BubbleSort.cs" />
     <Compile Include="Models\HeapSort.cs" />
@@ -55,24 +54,6 @@
     <Compile Include="Models\MockSortingAlgorithm.cs" />
     <Compile Include="Models\QuickSort.cs" />
     <Compile Include="Models\SortingAlgorithm.cs" />
-    <Compile Include="Views\AlgorithmInformationUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\AlgorithmInformationUI.Designer.cs">
-      <DependentUpon>AlgorithmInformationUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\InteractiveUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\InteractiveUI.Designer.cs">
-      <DependentUpon>InteractiveUI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Menu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Menu.Designer.cs">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Views\SortingAlgorithmAnimationsHelpUI.cs">
@@ -87,21 +68,6 @@
     <Compile Include="Views\SortingAlgorithmAnimationsUI.Designer.cs">
       <DependentUpon>SortingAlgorithmAnimationsUI.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\ShortestPathAlgorithmsUI.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\ShortestPathAlgorithmsUI.Designer.cs">
-      <DependentUpon>ShortestPathAlgorithmsUI.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="Views\AlgorithmInformationUI.resx">
-      <DependentUpon>AlgorithmInformationUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\InteractiveUI.resx">
-      <DependentUpon>InteractiveUI.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Menu.resx">
-      <DependentUpon>Menu.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -112,9 +78,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Views\ShortestPathAlgorithmsUI.resx">
-      <DependentUpon>ShortestPathAlgorithmsUI.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\SortingAlgorithmAnimationsHelpUI.resx">
       <DependentUpon>SortingAlgorithmAnimationsHelpUI.cs</DependentUpon>
     </EmbeddedResource>

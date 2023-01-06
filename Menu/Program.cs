@@ -19,7 +19,7 @@ namespace Prototype
             Application.SetCompatibleTextRenderingDefault(false);
 
             // run menu first
-            Application.Run(new Menu());
+            Application.Run(new SortingAlgorithmAnimationsUI());
         }
     }
 }
