@@ -100,5 +100,8 @@
   <ItemGroup>
     <EmbeddedResource Include="Views\HelpText\sortingalgorithmanimationshelptext.html" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\HelpText\styles.css" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
