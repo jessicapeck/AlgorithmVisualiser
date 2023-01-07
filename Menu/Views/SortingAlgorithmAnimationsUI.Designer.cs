@@ -37,6 +37,7 @@ namespace Prototype.Views
             this.play_button = new System.Windows.Forms.Button();
             this.stop_button = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.number_of_elements_counter_label = new System.Windows.Forms.Label();
             this.data_values_groupBox = new System.Windows.Forms.GroupBox();
@@ -57,7 +58,6 @@ namespace Prototype.Views
             this.algorithm2_num_comparisons_label = new System.Windows.Forms.Label();
             this.algorithm2_num_swaps_label = new System.Windows.Forms.Label();
             this.help_button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).BeginInit();
@@ -159,6 +159,16 @@ namespace Prototype.Views
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1209, 74);
             this.panel1.TabIndex = 11;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(306, 13);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(639, 55);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Sorting Algorithm Visualiser";
             // 
             // panel2
             // 
@@ -397,16 +407,6 @@ namespace Prototype.Views
             this.help_button.Text = "?";
             this.help_button.UseVisualStyleBackColor = true;
             this.help_button.Click += new System.EventHandler(this.help_button_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(306, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(669, 55);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Sorting Algorithm Animations";
             // 
             // SortingAlgorithmAnimationsUI
             // 
