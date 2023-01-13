@@ -20,7 +20,6 @@ namespace Prototype.Controllers
         private bool runAnimations;
 
 
-
         private SortingAlgorithm CreateInstanceOfAlgorithm(string choice)
         {
             // create an instance of algorithm corresponding to input value
@@ -188,10 +187,15 @@ namespace Prototype.Controllers
             List<int> dataSet1Reversed = new List<int>(dataSet1);
             dataSet1Reversed.Reverse();
 
+            // TEST
+            //Console.WriteLine("Reversed data set:");
+            //Console.WriteLine(string.Join(", ", dataSet1Reversed));
+            //Console.WriteLine("");
+
             if (startingOrder == "Random")
             {
                 // enter loop if dataSet2 is already ordered, or it is the first try of creating dataSet2
-                while ((dataSet2 == dataSet1) || (dataSet2 == dataSet1Reversed) || firstTry)
+                while (dataSet2.SequenceEqual(dataSet1) || dataSet2.SequenceEqual(dataSet1Reversed) || firstTry)
                 {
                     dataSet2.RemoveRange(0, dataSet2.Count());
                     List<int> dataSet1Copy = new List<int> (dataSet1);
@@ -209,6 +213,11 @@ namespace Prototype.Controllers
                         // remove the element selected from the original data set
                         dataSet1Copy.RemoveAt(randomIndex);
                     }
+
+                    // TEST
+                    Console.WriteLine(string.Join(", ", dataSet1));
+                    Console.WriteLine(string.Join(", ", dataSet2));
+                    Console.WriteLine("");
 
                     firstTry = false;
                 }
@@ -250,7 +259,6 @@ namespace Prototype.Controllers
 
             return dataSet2;
         }
-
 
         public void PauseAnimations()
         {
