@@ -104,13 +104,13 @@ namespace Prototype.Views
             // 
             this.speed_trackBar.BackColor = System.Drawing.Color.WhiteSmoke;
             this.speed_trackBar.Location = new System.Drawing.Point(10, 663);
-            this.speed_trackBar.Maximum = 500;
-            this.speed_trackBar.Minimum = 15;
+            this.speed_trackBar.Maximum = 995;
+            this.speed_trackBar.Minimum = 5;
             this.speed_trackBar.Name = "speed_trackBar";
             this.speed_trackBar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.speed_trackBar.Size = new System.Drawing.Size(330, 69);
             this.speed_trackBar.TabIndex = 3;
-            this.speed_trackBar.Value = 300;
+            this.speed_trackBar.Value = 500;
             // 
             // pause_button
             // 
