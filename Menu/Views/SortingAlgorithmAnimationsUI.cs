@@ -49,6 +49,9 @@ namespace Prototype.Views
         // to determine if picture box needs to be cleared
         private bool stopAnimations = false;
 
+        // to determine whether the UI is displaying the starting order of the data set
+        private bool showingStartingOrder;
+
         private Form helpForm;
 
 
@@ -176,6 +179,9 @@ namespace Prototype.Views
             stop_button.Enabled = true;
             stop_button.BackColor = Color.OrangeRed;
 
+            // set showingStartingOrder to true
+            showingStartingOrder = true;
+
             // create new instance of SortingAlgorithmController
             controller = new SortingAlgorithmController();
 
@@ -280,6 +286,16 @@ namespace Prototype.Views
 
             // wait time
             await Task.Delay(this.speed_trackBar.Value);
+
+            // wait additional time if showing starting order of data set
+            if (showingStartingOrder)
+            {
+                // wait 1000ms
+                await Task.Delay(1000);
+
+                // set showingStartingOrder back to false
+                showingStartingOrder = false;
+            }
 
             //Console.WriteLine(stepNumber);
         }
