@@ -54,7 +54,6 @@ namespace Prototype.Views
 
         private Form helpForm;
 
-
         public SortingAlgorithmAnimationsUI()
         {
             InitializeComponent();
@@ -149,7 +148,6 @@ namespace Prototype.Views
             secondSortingAlgorithm = algorithm2_comboBox.Text;
 
             return (firstSortingAlgorithm, secondSortingAlgorithm);
-
         }
 
         // open help form
@@ -235,7 +233,6 @@ namespace Prototype.Views
 
             controller.PlayAnimations();
             controller.Sort(this);
-
         }
 
         private void stop_button_Click(object sender, EventArgs e)
@@ -373,7 +370,6 @@ namespace Prototype.Views
                 g.DrawLine(pen2, new Point(xPosition, yPosition), new Point(xPosition, yPosition - (barHeight * yScaling)));
 
                 xPosition += xScaling + 5;
-
             }
         }
 
@@ -411,20 +407,6 @@ namespace Prototype.Views
             }
         }
 
-        // TODO : FUTURE DEVELOPMENT
-        private void shortest_path_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void interactive_algorithms_button_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void facts_information_button_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
+

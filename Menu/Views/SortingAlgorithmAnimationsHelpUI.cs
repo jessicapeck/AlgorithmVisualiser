@@ -13,9 +13,7 @@ using System.Reflection;
 namespace Prototype.Views
 {
     public partial class SortingAlgorithmAnimationsHelpUI : Form
-    {
-        
-
+    {       
         public SortingAlgorithmAnimationsHelpUI()
         {
             InitializeComponent();
@@ -25,7 +23,7 @@ namespace Prototype.Views
         {
             string htmlContent;
 
-            //// load help text from an embedded resource
+            // load help text from an embedded resource
             var assembly = Assembly.GetExecutingAssembly();
             var resourceName = "Prototype.Views.HelpText.sortingalgorithmanimationshelptext.html";
 
