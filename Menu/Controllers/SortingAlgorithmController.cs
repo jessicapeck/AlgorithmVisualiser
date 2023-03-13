@@ -82,7 +82,6 @@ namespace Prototype.Controllers
             // keep going until both algorithms are sorted
             while ((!finished) && (runAnimations))
             {
-
                 // tell each algorithm to perform one step and return the current state of the data if not already sorted
                 if (!firstAlgorithm.Sorted)
                 {
@@ -117,7 +116,6 @@ namespace Prototype.Controllers
                     parentForm.AlgorithmsFinished();
                 }
             }
-
         }
 
         private List<int> CreateDataSet(int numberOfElements, string startingOrder, string dataValues)
@@ -220,8 +218,7 @@ namespace Prototype.Controllers
                     Console.WriteLine("");
 
                     firstTry = false;
-                }
-                    
+                }                    
             }
             else if (startingOrder == "Reversed")
             {

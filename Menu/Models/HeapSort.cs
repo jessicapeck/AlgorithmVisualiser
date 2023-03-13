@@ -227,8 +227,7 @@ namespace Prototype.Models
                         heapSortForLoop = true;
                     }
                 }
-            }
-                        
+            }                        
             
             return data;
         }

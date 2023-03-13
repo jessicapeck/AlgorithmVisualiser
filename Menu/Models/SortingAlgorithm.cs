@@ -8,7 +8,6 @@ namespace Prototype.Models
 {
     abstract class SortingAlgorithm
     {
-        
         protected List<int> data;
 
         // define boolean states for comparisonStep and swapStep
@@ -24,7 +23,6 @@ namespace Prototype.Models
 
         // for storing special colour indexes and colour codes in form : (element index, colour code)
         protected List<(int, int)> specialColours = new List<(int, int)>{ };
-
 
         // getter and setter for data
         public List<int> DataSet
@@ -78,6 +76,7 @@ namespace Prototype.Models
             }
         }
 
+        // getter and setter for specialColours
         public List<(int,int)> SpecialColours
         {
             get

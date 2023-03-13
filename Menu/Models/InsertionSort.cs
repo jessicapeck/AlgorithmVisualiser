@@ -83,8 +83,6 @@ namespace Prototype.Models
 
             // return the data set to controller
             return data;
-        }
-
-        
+        }        
     }
 }

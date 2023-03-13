@@ -18,7 +18,7 @@ namespace Prototype
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            // run menu first
+            // run sorting algorithm animations first
             Application.Run(new SortingAlgorithmAnimationsUI());
         }
     }

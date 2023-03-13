@@ -8,10 +8,7 @@ namespace Prototype.Models
 {
     class MockSortingAlgorithm : SortingAlgorithm
     {
-        
-        private int counter = 0;
-
-        
+        private int counter = 0;        
 
         public override List<int> PerformStep()
         {
@@ -25,10 +22,7 @@ namespace Prototype.Models
             // test : write contents of data set to console
             //Console.WriteLine("MOCK SORT: " + string.Join(", ", data));
 
-
             return data;
-        }
-
-        
+        }        
     }
 }

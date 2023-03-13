@@ -32,7 +32,6 @@ namespace Prototype.Models
         private int l1;
         private int l2;
 
-
         private List<int> leftSublist = new List<int> { };
         private List<int> rightSublist = new List<int> { };
 
@@ -41,8 +40,6 @@ namespace Prototype.Models
 
         // for use in swap
         private int temp;
-
-
 
         public override List<int> PerformStep()
         {
@@ -74,8 +71,7 @@ namespace Prototype.Models
                 }
 
                 // define counter
-                counter = indexesForMergeSort.Count() - 1;
-                
+                counter = indexesForMergeSort.Count() - 1;                
 
                 // TEST : write contents of indexesForMergeSort to console
                 //foreach ((int,int) setOfIndexes in indexesForMergeSort)

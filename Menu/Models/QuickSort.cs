@@ -68,7 +68,6 @@ namespace Prototype.Models
                     {
                         // add LHS sublist of smaller elements
                         futurePivotIndexes.Add((startIndex, pivotIndex - 1));
-
                     }
 
                     // check if pivot element is not at the far RHS of its sublist
