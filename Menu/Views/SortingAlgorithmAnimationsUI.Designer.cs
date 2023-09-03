@@ -434,7 +434,7 @@ namespace Prototype.Views
             this.MaximizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1234, 890);
             this.Name = "SortingAlgorithmAnimationsUI";
-            this.Text = "PrototypeUI";
+            this.Text = "SortingAlgorithmVisualiser";
             ((System.ComponentModel.ISupportInitialize)(this.second_algorithm_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.first_algorithm_pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.speed_trackBar)).EndInit();

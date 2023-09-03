@@ -284,6 +284,7 @@ namespace Prototype.Views
             // wait time
             await Task.Delay(this.speed_trackBar.Value);
 
+            /*
             // wait additional time if showing starting order of data set
             if (showingStartingOrder)
             {
@@ -293,7 +294,8 @@ namespace Prototype.Views
                 // set showingStartingOrder back to false
                 showingStartingOrder = false;
             }
-
+            */
+            
             //Console.WriteLine(stepNumber);
         }
 
