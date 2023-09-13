@@ -30,4 +30,7 @@ To navigate to the help window, click the **?** button at the top right corner o
 - HTML and CSS
 
 ## License
+Open sourced under the [MIT license](LICENSE.md).
+
+## License
 TODO
