@@ -7,9 +7,13 @@
 ## Introduction
 Welcome to the 'Sorting Algorithm Visualiser'! This is the software that I developed for my A Level Computer Science project.
 
-Although I had more experience with Python, I chose to write this project in C# to obtain more experience with object-oriented languages, and the .NET framework.
+### What does it do?
 
 The purpose of this project was to make an application that allowed two different sorting algorithms to run simulatneously on the same initial data set, allowing a user to copmare and contrast the efficiency of different sorting algorithms. The user is able to customise the starting data set to test the limits of each sorting algorithm and design them to exhibit worst-case and best-case scenarios.
+
+### Why C# and .NET?
+
+Although I had more experience with Python, I chose to write this project in C# to obtain more experience with object-oriented languages, and the .NET framework.
 
 I hope you find this a useful tool for learning about different sorting algorithms and seeing them in action!
 
